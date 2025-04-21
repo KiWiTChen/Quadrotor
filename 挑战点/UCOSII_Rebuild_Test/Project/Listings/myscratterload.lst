@@ -1,0 +1,167 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ; myScatterLoad.s £¨¶ÀÁ¢µÄÊý¾Ý³õÊ¼»¯ÎÄ¼þ£©
+    2 00000000                 AREA             |.text|, CODE, READONLY
+    3 00000000                 EXPORT           myScatterLoad
+    4 00000000                 IMPORT           |Image$$RW_IRAM1$$Base|
+    5 00000000                 IMPORT           |Image$$RW_IRAM1$$Length|
+    6 00000000                 IMPORT           |Load$$RW_IRAM1$$Base|
+    7 00000000                 IMPORT           |Image$$RW_IRAM1$$ZI$$Base|
+    8 00000000                 IMPORT           |Image$$RW_IRAM1$$ZI$$Length|
+    9 00000000         
+   10 00000000         myScatterLoad
+                               PROC
+   11 00000000         ; Êý¾Ý¶Î¿½±´
+   12 00000000 480A            LDR              R0, =|Load$$RW_IRAM1$$Base|
+   13 00000002 490B            LDR              R1, =|Image$$RW_IRAM1$$Base|
+   14 00000004 4A0B            LDR              R2, =|Image$$RW_IRAM1$$Length|
+   15 00000006 2A00            CMP              R2, #0
+   16 00000008 D003            BEQ              SkipDataCopy
+   17 0000000A         CopyLoop
+   18 0000000A C808            LDMIA            R0!, {R3}   ; ´Ó¼ÓÔØµØÖ·ÅúÁ¿¼ÓÔ
+                                                            Ø
+   19 0000000C C108            STMIA            R1!, {R3}   ; ´æ´¢µ½Á´½ÓµØÖ·
+   20 0000000E 1F12            SUBS             R2, R2, #4  ; µÝ¼õ¼ÆÊýÆ÷
+   21 00000010 DCFB            BGT              CopyLoop    ; Ñ­»·Ö±µ½Íê³É
+   22 00000012         SkipDataCopy
+   23 00000012         
+   24 00000012         ; BSS¶ÎÇåÁã£¨ÓÅ»¯ºóµÄÕýÏòÇåÁã£©
+   25 00000012 4809            LDR              R0, =|Image$$RW_IRAM1$$ZI$$Base
+|
+   26 00000014 4909            LDR              R1, =|Image$$RW_IRAM1$$ZI$$Leng
+th|
+   27 00000016 2900            CMP              R1, #0
+   28 00000018 D006            BEQ              SkipBSSInit
+   29 0000001A EB00 0201       ADD              R2, R0, R1  ; ¼ÆËã½áÊøµØÖ·
+   30 0000001E 2300            MOVS             R3, #0
+   31 00000020         ZeroLoop
+   32 00000020 F840 3B04       STR              R3, [R0], #4 ; ´æ´¢0²¢µÝÔöµØÖ·
+   33 00000024 4290            CMP              R0, R2      ; ¼ì²éÊÇ·ñµ½´ï½áÊøµ
+                                                            ØÖ·
+   34 00000026 DBFB            BLT              ZeroLoop    ; ¼ÌÐøÖ±µ½¸²¸ÇÈ«²¿Ç
+                                                            øÓò
+   35 00000028         SkipBSSInit
+   36 00000028         
+   37 00000028 4770            BX               LR          ; ·µ»Øµ÷ÓÃÕß
+   38 0000002A                 ENDP
+   39 0000002A         
+   40 0000002A 00 00           ALIGN
+   41 0000002C                 END
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp --apcs=int
+erwork --depend=.\objects\myscratterload.d -o.\objects\myscratterload.o -I.\RTE
+\_Target_1 -IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.17.0\Drivers\CMSIS\Device
+\ST\STM32F4xx\Include -IC:\Keil_v5\ARM\CMSIS\Include --predefine="__UVISION_VER
+SION SETA 524" --predefine="STM32F401xE SETA 1" --list=.\listings\myscratterloa
+d.lst ..\User\myScratterLoad.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+.text 00000000
+
+Symbol: .text
+   Definitions
+      At line 2 in file ..\User\myScratterLoad.s
+   Uses
+      None
+Comment: .text unused
+CopyLoop 0000000A
+
+Symbol: CopyLoop
+   Definitions
+      At line 17 in file ..\User\myScratterLoad.s
+   Uses
+      At line 21 in file ..\User\myScratterLoad.s
+Comment: CopyLoop used once
+SkipBSSInit 00000028
+
+Symbol: SkipBSSInit
+   Definitions
+      At line 35 in file ..\User\myScratterLoad.s
+   Uses
+      At line 28 in file ..\User\myScratterLoad.s
+Comment: SkipBSSInit used once
+SkipDataCopy 00000012
+
+Symbol: SkipDataCopy
+   Definitions
+      At line 22 in file ..\User\myScratterLoad.s
+   Uses
+      At line 16 in file ..\User\myScratterLoad.s
+Comment: SkipDataCopy used once
+ZeroLoop 00000020
+
+Symbol: ZeroLoop
+   Definitions
+      At line 31 in file ..\User\myScratterLoad.s
+   Uses
+      At line 34 in file ..\User\myScratterLoad.s
+Comment: ZeroLoop used once
+myScatterLoad 00000000
+
+Symbol: myScatterLoad
+   Definitions
+      At line 10 in file ..\User\myScratterLoad.s
+   Uses
+      At line 3 in file ..\User\myScratterLoad.s
+Comment: myScatterLoad used once
+6 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+External symbols
+
+Image$$RW_IRAM1$$Base 00000000
+
+Symbol: Image$$RW_IRAM1$$Base
+   Definitions
+      At line 4 in file ..\User\myScratterLoad.s
+   Uses
+      At line 13 in file ..\User\myScratterLoad.s
+Comment: Image$$RW_IRAM1$$Base used once
+Image$$RW_IRAM1$$Length 00000000
+
+Symbol: Image$$RW_IRAM1$$Length
+   Definitions
+      At line 5 in file ..\User\myScratterLoad.s
+   Uses
+      At line 14 in file ..\User\myScratterLoad.s
+Comment: Image$$RW_IRAM1$$Length used once
+Image$$RW_IRAM1$$ZI$$Base 00000000
+
+Symbol: Image$$RW_IRAM1$$ZI$$Base
+   Definitions
+      At line 7 in file ..\User\myScratterLoad.s
+   Uses
+      At line 25 in file ..\User\myScratterLoad.s
+Comment: Image$$RW_IRAM1$$ZI$$Base used once
+Image$$RW_IRAM1$$ZI$$Length 00000000
+
+Symbol: Image$$RW_IRAM1$$ZI$$Length
+   Definitions
+      At line 8 in file ..\User\myScratterLoad.s
+   Uses
+      At line 26 in file ..\User\myScratterLoad.s
+Comment: Image$$RW_IRAM1$$ZI$$Length used once
+Load$$RW_IRAM1$$Base 00000000
+
+Symbol: Load$$RW_IRAM1$$Base
+   Definitions
+      At line 6 in file ..\User\myScratterLoad.s
+   Uses
+      At line 12 in file ..\User\myScratterLoad.s
+Comment: Load$$RW_IRAM1$$Base used once
+5 symbols
+346 symbols in table

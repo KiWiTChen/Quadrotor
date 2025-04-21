@@ -1,0 +1,9 @@
+.\objects\app_hooks.o: ..\Cfg\app_hooks.c
+.\objects\app_hooks.o: ..\Core\os.h
+.\objects\app_hooks.o: ..\Core\ucos_ii.h
+.\objects\app_hooks.o: ..\Cfg\app_cfg.h
+.\objects\app_hooks.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+.\objects\app_hooks.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\app_hooks.o: ..\Cfg\os_cfg.h
+.\objects\app_hooks.o: ..\Port\os_cpu.h
+.\objects\app_hooks.o: ..\Core\os_trace.h

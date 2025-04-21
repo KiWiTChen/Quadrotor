@@ -1,0 +1,138 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 EXPORT           OS_CPU_SR_Save
+    2 00000000                 EXPORT           OS_CPU_SR_Restore
+    3 00000000                 EXPORT           OSCtxSw
+    4 00000000                 EXPORT           OSIntCtxSw
+    5 00000000                 EXPORT           OSStartHighRdy
+    6 00000000                 EXPORT           OS_CPU_PendSVHandler
+    7 00000000         
+    8 00000000                 AREA             |.text|, CODE, READONLY, ALIGN=
+2
+    9 00000000                 THUMB
+   10 00000000                 REQUIRE8
+   11 00000000                 PRESERVE8
+   12 00000000         
+   13 00000000         ; ±£¥Ê÷–∂œ◊¥Ã¨≤¢πÿ÷–∂œ
+   14 00000000         OS_CPU_SR_Save
+                               PROC                         ; ±Í«©∫Û≤ª–Ë“™√∞∫≈
+   15 00000000 F3EF 8010       MRS              R0, PRIMASK ; ∂¡»°PRIMASKµΩR0
+   16 00000004 B672            CPSID            I           ; πÿ±’÷–∂œ
+   17 00000006 4770            BX               LR          ; ∑µªÿ
+   18 00000008                 ENDP
+   19 00000008         
+   20 00000008         ; ª÷∏¥÷–∂œ◊¥Ã¨
+   21 00000008         OS_CPU_SR_Restore
+                               PROC
+   22 00000008 F380 8810       MSR              PRIMASK, R0 ; ¥”R0ª÷∏¥PRIMASK
+   23 0000000C 4770            BX               LR
+   24 0000000E                 ENDP
+   25 0000000E         
+   26 0000000E         ; ∆‰À˚∫Ø ˝±£≥÷œ‡Õ¨Ω·ππ...
+   27 0000000E         
+   28 0000000E         ; »ŒŒÒ…œœ¬?«–ªª£¨¥À¥¶Œ™ø’ µœ÷£¨Ωˆπ©Õ®π˝±‡“Î°£“‘∫Û–Ë“™ µœ
+                       ÷»ŒŒÒ…œœ¬?«–ªª¥˙¬Î°£
+   29 0000000E         OSCtxSw PROC
+   30 0000000E 4770            BX               LR
+   31 00000010                 ENDP
+   32 00000010         
+   33 00000010         ; ÷–∂œº∂»ŒŒÒ«–ªª£¨ø’ µœ÷
+   34 00000010         OSIntCtxSw
+                               PROC
+   35 00000010 4770            BX               LR
+   36 00000012                 ENDP
+   37 00000012         
+   38 00000012         ; ∆Ù∂Ø◊Ó?”≈œ»º∂»ŒŒÒ£¨ø’ µœ÷£¨ µº –Ë“™≥ı ºªØ»ŒŒÒ∂—’ª≤¢∆Ù∂
+                       Øµ⁄?∏ˆ»ŒŒÒ
+   39 00000012         OSStartHighRdy
+                               PROC
+   40 00000012 4770            BX               LR
+   41 00000014                 ENDP
+   42 00000014         
+   43 00000014         ; PendSV ÷–∂œ¥¶¿Ì£¨ø’ µœ÷£¨ µº ”¶ µœ÷PendSV÷–∂œ¥¶¿Ì“‘ÕÍ≥
+                       …»ŒŒÒ«–ªª
+   44 00000014         OS_CPU_PendSVHandler
+                               PROC
+   45 00000014 4770            BX               LR
+   46 00000016                 ENDP
+   47 00000016                 END
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp --apcs=int
+erwork --depend=.\objects\os_cpu_a.d -o.\objects\os_cpu_a.o -I.\RTE\_Target_1 -
+IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.17.0\Drivers\CMSIS\Device\ST\STM32F4x
+
+
+
+ARM Macro Assembler    Page 2 
+
+
+x\Include -IC:\Keil_v5\ARM\CMSIS\Include --predefine="__UVISION_VERSION SETA 52
+4" --predefine="_RTE_ SETA 1" --predefine="STM32F401xE SETA 1" --list=.\listing
+s\os_cpu_a.lst Port\os_cpu_a.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+.text 00000000
+
+Symbol: .text
+   Definitions
+      At line 8 in file Port\os_cpu_a.s
+   Uses
+      None
+Comment: .text unused
+OSCtxSw 0000000E
+
+Symbol: OSCtxSw
+   Definitions
+      At line 29 in file Port\os_cpu_a.s
+   Uses
+      At line 3 in file Port\os_cpu_a.s
+Comment: OSCtxSw used once
+OSIntCtxSw 00000010
+
+Symbol: OSIntCtxSw
+   Definitions
+      At line 34 in file Port\os_cpu_a.s
+   Uses
+      At line 4 in file Port\os_cpu_a.s
+Comment: OSIntCtxSw used once
+OSStartHighRdy 00000012
+
+Symbol: OSStartHighRdy
+   Definitions
+      At line 39 in file Port\os_cpu_a.s
+   Uses
+      At line 5 in file Port\os_cpu_a.s
+Comment: OSStartHighRdy used once
+OS_CPU_PendSVHandler 00000014
+
+Symbol: OS_CPU_PendSVHandler
+   Definitions
+      At line 44 in file Port\os_cpu_a.s
+   Uses
+      At line 6 in file Port\os_cpu_a.s
+Comment: OS_CPU_PendSVHandler used once
+OS_CPU_SR_Restore 00000008
+
+Symbol: OS_CPU_SR_Restore
+   Definitions
+      At line 21 in file Port\os_cpu_a.s
+   Uses
+      At line 2 in file Port\os_cpu_a.s
+Comment: OS_CPU_SR_Restore used once
+OS_CPU_SR_Save 00000000
+
+Symbol: OS_CPU_SR_Save
+   Definitions
+      At line 14 in file Port\os_cpu_a.s
+   Uses
+      At line 1 in file Port\os_cpu_a.s
+Comment: OS_CPU_SR_Save used once
+7 symbols
+341 symbols in table

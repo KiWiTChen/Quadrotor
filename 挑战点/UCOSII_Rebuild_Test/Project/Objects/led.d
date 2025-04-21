@@ -1,0 +1,9 @@
+.\objects\led.o: ..\Hardware\LED.c
+.\objects\led.o: ..\Core\os.h
+.\objects\led.o: ..\Core\ucos_ii.h
+.\objects\led.o: ..\Cfg\app_cfg.h
+.\objects\led.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+.\objects\led.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\led.o: ..\Cfg\os_cfg.h
+.\objects\led.o: ..\Port\os_cpu.h
+.\objects\led.o: ..\Core\os_trace.h

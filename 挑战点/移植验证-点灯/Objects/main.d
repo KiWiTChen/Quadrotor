@@ -1,0 +1,12 @@
+.\objects\main.o: user\main.c
+.\objects\main.o: .\core\ucos_ii.h
+.\objects\main.o: .\ports\app_cfg.h
+.\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+.\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\main.o: .\ports\os_cfg.h
+.\objects\main.o: .\ports\os_cpu.h
+.\objects\main.o: .\core\os_trace.h
+.\objects\main.o: user\Task.h
+.\objects\main.o: .\hardware\usart.h
+.\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\main.o: .\hardware\LED.h

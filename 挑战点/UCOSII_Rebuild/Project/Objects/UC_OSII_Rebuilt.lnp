@@ -1,0 +1,9 @@
+--cpu=Cortex-M4.fp
+".\objects\os_cpu_c.o"
+".\objects\os_cpu_a.o"
+".\objects\main.o"
+".\objects\startup_stm32f40_41xxx.o"
+--strict --scatter ".\Objects\UC_OSII_Rebuilt.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\UC_OSII_Rebuilt.map" -o .\Objects\UC_OSII_Rebuilt.axf

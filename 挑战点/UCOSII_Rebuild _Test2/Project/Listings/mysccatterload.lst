@@ -1,0 +1,221 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             |.text|, CODE, READONLY
+    2 00000000         myScatterLoad
+                               PROC
+    3 00000000                 EXPORT           myScatterLoad
+    4 00000000                 IMPORT           |Image$$RW_IRAM1$$Base| ; Êý¾Ý¶
+                                                            ÎÁ´½ÓµØÖ·£¨RAM£©
+    5 00000000                 IMPORT           |Image$$RW_IRAM1$$Length| 
+                                                            ; Êý¾Ý¶Î³¤¶È
+    6 00000000                 IMPORT           |Load$$RW_IRAM1$$Base| ; Êý¾Ý¶Î
+                                                            ¼ÓÔØµØÖ·£¨Flash£©
+    7 00000000                 IMPORT           |Image$$RW_IRAM1$$ZI$$Base| ; Z
+                                                            I¶Î£¨BSS£©Á´½ÓµØÖ·
+    8 00000000                 IMPORT           |Image$$RW_IRAM1$$ZI$$Length| 
+                                                            ; ZI¶Î³¤¶È
+    9 00000000         
+   10 00000000         ;------------------------------
+   11 00000000         ; 1. ¸´ÖÆÊý¾Ý¶Î£¨´ÓFlashµ½RAM£©
+   12 00000000         ;------------------------------
+   13 00000000         CopyData
+   14 00000000 480C            LDR              R0, =|Load$$RW_IRAM1$$Base| ; R
+                                                            0 = Êý¾Ý¶Î¼ÓÔØµØÖ·£
+                                                            ¨Flash£©
+   15 00000002 490D            LDR              R1, =|Image$$RW_IRAM1$$Base| ; 
+                                                            R1 = Êý¾Ý¶ÎÁ´½ÓµØÖ·
+                                                            £¨RAM£©
+   16 00000004 4A0D            LDR              R2, =|Image$$RW_IRAM1$$Length| 
+                                                            ; R2 = Êý¾Ý¶Î³¤¶È
+   17 00000006 F04F 0300       MOV              R3, #0      ; ³õÊ¼»¯Æ«ÒÆÎª0
+   18 0000000A         
+   19 0000000A         CopyLoop
+   20 0000000A 4293            CMP              R3, R2      ; ¼ì²éÊÇ·ñ¸´ÖÆÍê±Ï
+   21 0000000C DA04            BGE              CopyDone    ; Èô R3 >= R2£¬Ìø×ª
+                                                            µ½ CopyDone
+   22 0000000E 58C4            LDR              R4, [R0, R3] ; ´ÓFlash¼ÓÔØ4×Ö½Ú
+                                                            Êý¾Ýµ½R4
+   23 00000010 50CC            STR              R4, [R1, R3] ; ½«R4ÖÐµÄÊý¾ÝÐ´Èë
+                                                            RAM
+   24 00000012 F103 0304       ADD              R3, R3, #4  ; Æ«ÒÆÔö¼Ó4×Ö½Ú
+   25 00000016 E7F8            B                CopyLoop    ; ¼ÌÐøÑ­»·
+   26 00000018         
+   27 00000018         CopyDone
+   28 00000018         
+   29 00000018         ;------------------------------
+   30 00000018         ; 2. ÇåÁãBSS¶Î£¨³õÊ¼»¯Î´³õÊ¼»¯Êý¾Ý£©
+   31 00000018         ;------------------------------
+   32 00000018         ; BSS¶ÎÇåÁã£¨ÓÅ»¯ºóµÄÕýÏòÇåÁã£©
+   33 00000018 4809            LDR              R0, =|Image$$RW_IRAM1$$ZI$$Base
+|
+   34 0000001A 490A            LDR              R1, =|Image$$RW_IRAM1$$ZI$$Leng
+th|
+   35 0000001C 2900            CMP              R1, #0
+   36 0000001E D006            BEQ              SkipBSSInit
+   37 00000020 EB00 0201       ADD              R2, R0, R1  ; ¼ÆËã½áÊøµØÖ·
+   38 00000024 2300            MOVS             R3, #0
+   39 00000026         ZeroLoop
+   40 00000026 F840 3B04       STR              R3, [R0], #4 ; ´æ´¢0²¢µÝÔöµØÖ·
+   41 0000002A 4290            CMP              R0, R2      ; ¼ì²éÊÇ·ñµ½´ï½áÊøµ
+                                                            ØÖ·
+   42 0000002C DBFB            BLT              ZeroLoop    ; ¼ÌÐøÖ±µ½¸²¸ÇÈ«²¿Ç
+
+
+
+ARM Macro Assembler    Page 2 
+
+
+                                                            øÓò
+   43 0000002E         SkipBSSInit
+   44 0000002E         
+   45 0000002E         CleanDone
+   46 0000002E         
+   47 0000002E 00 00           ALIGN                        ; È·±£µØÖ·¶ÔÆë
+   48 00000030 4770            BX               LR          ; ·µ»Øµ÷ÓÃÕß
+   49 00000032                 ENDP
+   50 00000032         
+   51 00000032         ;------------------------------
+   52 00000032         ; ½áÊø
+   53 00000032         ;------------------------------
+   54 00000032 00 00           ALIGN
+   55 00000034                 END
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp --apcs=int
+erwork --depend=.\objects\mysccatterload.d -o.\objects\mysccatterload.o -I..\Cf
+g -I..\Core -I..\Port -I..\Source -I.\RTE\_Target_1 -IC:\Keil_v5\ARM\PACK\Keil\
+STM32F4xx_DFP\2.17.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include -IC:\Keil_v5\ARM
+\CMSIS\Include --predefine="__UVISION_VERSION SETA 524" --predefine="STM32F401x
+E SETA 1" --list=.\listings\mysccatterload.lst ..\User\mySccatterload.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+.text 00000000
+
+Symbol: .text
+   Definitions
+      At line 1 in file ..\User\mySccatterload.s
+   Uses
+      None
+Comment: .text unused
+CleanDone 0000002E
+
+Symbol: CleanDone
+   Definitions
+      At line 45 in file ..\User\mySccatterload.s
+   Uses
+      None
+Comment: CleanDone unused
+CopyData 00000000
+
+Symbol: CopyData
+   Definitions
+      At line 13 in file ..\User\mySccatterload.s
+   Uses
+      None
+Comment: CopyData unused
+CopyDone 00000018
+
+Symbol: CopyDone
+   Definitions
+      At line 27 in file ..\User\mySccatterload.s
+   Uses
+      At line 21 in file ..\User\mySccatterload.s
+Comment: CopyDone used once
+CopyLoop 0000000A
+
+Symbol: CopyLoop
+   Definitions
+      At line 19 in file ..\User\mySccatterload.s
+   Uses
+      At line 25 in file ..\User\mySccatterload.s
+Comment: CopyLoop used once
+SkipBSSInit 0000002E
+
+Symbol: SkipBSSInit
+   Definitions
+      At line 43 in file ..\User\mySccatterload.s
+   Uses
+      At line 36 in file ..\User\mySccatterload.s
+Comment: SkipBSSInit used once
+ZeroLoop 00000026
+
+Symbol: ZeroLoop
+   Definitions
+      At line 39 in file ..\User\mySccatterload.s
+   Uses
+      At line 42 in file ..\User\mySccatterload.s
+Comment: ZeroLoop used once
+myScatterLoad 00000000
+
+Symbol: myScatterLoad
+
+
+
+ARM Macro Assembler    Page 2 Alphabetic symbol ordering
+Relocatable symbols
+
+   Definitions
+      At line 2 in file ..\User\mySccatterload.s
+   Uses
+      At line 3 in file ..\User\mySccatterload.s
+Comment: myScatterLoad used once
+8 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+External symbols
+
+Image$$RW_IRAM1$$Base 00000000
+
+Symbol: Image$$RW_IRAM1$$Base
+   Definitions
+      At line 4 in file ..\User\mySccatterload.s
+   Uses
+      At line 15 in file ..\User\mySccatterload.s
+Comment: Image$$RW_IRAM1$$Base used once
+Image$$RW_IRAM1$$Length 00000000
+
+Symbol: Image$$RW_IRAM1$$Length
+   Definitions
+      At line 5 in file ..\User\mySccatterload.s
+   Uses
+      At line 16 in file ..\User\mySccatterload.s
+Comment: Image$$RW_IRAM1$$Length used once
+Image$$RW_IRAM1$$ZI$$Base 00000000
+
+Symbol: Image$$RW_IRAM1$$ZI$$Base
+   Definitions
+      At line 7 in file ..\User\mySccatterload.s
+   Uses
+      At line 33 in file ..\User\mySccatterload.s
+Comment: Image$$RW_IRAM1$$ZI$$Base used once
+Image$$RW_IRAM1$$ZI$$Length 00000000
+
+Symbol: Image$$RW_IRAM1$$ZI$$Length
+   Definitions
+      At line 8 in file ..\User\mySccatterload.s
+   Uses
+      At line 34 in file ..\User\mySccatterload.s
+Comment: Image$$RW_IRAM1$$ZI$$Length used once
+Load$$RW_IRAM1$$Base 00000000
+
+Symbol: Load$$RW_IRAM1$$Base
+   Definitions
+      At line 6 in file ..\User\mySccatterload.s
+   Uses
+      At line 14 in file ..\User\mySccatterload.s
+Comment: Load$$RW_IRAM1$$Base used once
+5 symbols
+348 symbols in table

@@ -1,0 +1,16 @@
+.\objects\ucos_ii.o: ..\Core\ucos_ii.c
+.\objects\ucos_ii.o: ..\Core\ucos_ii.h
+.\objects\ucos_ii.o: ..\Cfg\app_cfg.h
+.\objects\ucos_ii.o: ..\Cfg\os_cfg.h
+.\objects\ucos_ii.o: ..\Port\os_cpu.h
+.\objects\ucos_ii.o: ..\Core\os_trace.h
+.\objects\ucos_ii.o: ..\Core\os_core.c
+.\objects\ucos_ii.o: ..\Core\os_flag.c
+.\objects\ucos_ii.o: ..\Core\os_mbox.c
+.\objects\ucos_ii.o: ..\Core\os_mem.c
+.\objects\ucos_ii.o: ..\Core\os_mutex.c
+.\objects\ucos_ii.o: ..\Core\os_q.c
+.\objects\ucos_ii.o: ..\Core\os_sem.c
+.\objects\ucos_ii.o: ..\Core\os_task.c
+.\objects\ucos_ii.o: ..\Core\os_time.c
+.\objects\ucos_ii.o: ..\Core\os_tmr.c

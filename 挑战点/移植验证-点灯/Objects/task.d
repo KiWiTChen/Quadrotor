@@ -1,0 +1,13 @@
+.\objects\task.o: user\Task.c
+.\objects\task.o: user\Task.h
+.\objects\task.o: .\hardware\LED.h
+.\objects\task.o: .\hardware\usart.h
+.\objects\task.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\task.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\task.o: .\core\os.h
+.\objects\task.o: .\core\ucos_ii.h
+.\objects\task.o: .\ports\app_cfg.h
+.\objects\task.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+.\objects\task.o: .\ports\os_cfg.h
+.\objects\task.o: .\ports\os_cpu.h
+.\objects\task.o: .\core\os_trace.h

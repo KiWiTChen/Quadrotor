@@ -1,0 +1,174 @@
+Dependencies for Project 'UC_OSII_Rebuilt', Target 'Target 1': (DO NOT MODIFY !)
+F (..\Core\os.h)(0x63B71465)()
+F (..\Core\os_core.c)(0x63B71465)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\Core -I ..\Cfg -I ..\Port -I ..\Source -I ..\User -I ..\Hardware -I ..\Startup-I.\RTE\_Target_1-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.17.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F401xE-o .\objects\os_core.o --omf_browse .\objects\os_core.crf --depend .\objects\os_core.d)
+I (..\Core\ucos_ii.h)(0x63B71465)
+I (..\Cfg\app_cfg.h)(0x67F7CCE1)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x588B8344)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x588B8344)
+I (..\Cfg\os_cfg.h)(0x67F7EB5B)
+I (..\Port\os_cpu.h)(0x67F80485)
+I (..\Core\os_trace.h)(0x63B71465)
+F (..\Core\os_dbg_r.c)(0x63B71465)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\Core -I ..\Cfg -I ..\Port -I ..\Source -I ..\User -I ..\Hardware -I ..\Startup-I.\RTE\_Target_1-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.17.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F401xE-o .\objects\os_dbg_r.o --omf_browse .\objects\os_dbg_r.crf --depend .\objects\os_dbg_r.d)
+I (..\Core\ucos_ii.h)(0x63B71465)
+I (..\Cfg\app_cfg.h)(0x67F7CCE1)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x588B8344)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x588B8344)
+I (..\Cfg\os_cfg.h)(0x67F7EB5B)
+I (..\Port\os_cpu.h)(0x67F80485)
+I (..\Core\os_trace.h)(0x63B71465)
+F (..\Core\os_flag.c)(0x63B71465)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\Core -I ..\Cfg -I ..\Port -I ..\Source -I ..\User -I ..\Hardware -I ..\Startup-I.\RTE\_Target_1-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.17.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F401xE-o .\objects\os_flag.o --omf_browse .\objects\os_flag.crf --depend .\objects\os_flag.d)
+I (..\Core\ucos_ii.h)(0x63B71465)
+I (..\Cfg\app_cfg.h)(0x67F7CCE1)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x588B8344)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x588B8344)
+I (..\Cfg\os_cfg.h)(0x67F7EB5B)
+I (..\Port\os_cpu.h)(0x67F80485)
+I (..\Core\os_trace.h)(0x63B71465)
+F (..\Core\os_mbox.c)(0x63B71465)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\Core -I ..\Cfg -I ..\Port -I ..\Source -I ..\User -I ..\Hardware -I ..\Startup-I.\RTE\_Target_1-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.17.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F401xE-o .\objects\os_mbox.o --omf_browse .\objects\os_mbox.crf --depend .\objects\os_mbox.d)
+I (..\Core\ucos_ii.h)(0x63B71465)
+I (..\Cfg\app_cfg.h)(0x67F7CCE1)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x588B8344)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x588B8344)
+I (..\Cfg\os_cfg.h)(0x67F7EB5B)
+I (..\Port\os_cpu.h)(0x67F80485)
+I (..\Core\os_trace.h)(0x63B71465)
+F (..\Core\os_mem.c)(0x63B71465)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\Core -I ..\Cfg -I ..\Port -I ..\Source -I ..\User -I ..\Hardware -I ..\Startup-I.\RTE\_Target_1-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.17.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F401xE-o .\objects\os_mem.o --omf_browse .\objects\os_mem.crf --depend .\objects\os_mem.d)
+I (..\Core\ucos_ii.h)(0x63B71465)
+I (..\Cfg\app_cfg.h)(0x67F7CCE1)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x588B8344)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x588B8344)
+I (..\Cfg\os_cfg.h)(0x67F7EB5B)
+I (..\Port\os_cpu.h)(0x67F80485)
+I (..\Core\os_trace.h)(0x63B71465)
+F (..\Core\os_mutex.c)(0x63B71465)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\Core -I ..\Cfg -I ..\Port -I ..\Source -I ..\User -I ..\Hardware -I ..\Startup-I.\RTE\_Target_1-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.17.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F401xE-o .\objects\os_mutex.o --omf_browse .\objects\os_mutex.crf --depend .\objects\os_mutex.d)
+I (..\Core\ucos_ii.h)(0x63B71465)
+I (..\Cfg\app_cfg.h)(0x67F7CCE1)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x588B8344)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x588B8344)
+I (..\Cfg\os_cfg.h)(0x67F7EB5B)
+I (..\Port\os_cpu.h)(0x67F80485)
+I (..\Core\os_trace.h)(0x63B71465)
+F (..\Core\os_q.c)(0x67F69924)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\Core -I ..\Cfg -I ..\Port -I ..\Source -I ..\User -I ..\Hardware -I ..\Startup-I.\RTE\_Target_1-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.17.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F401xE-o .\objects\os_q.o --omf_browse .\objects\os_q.crf --depend .\objects\os_q.d)
+I (..\Core\ucos_ii.h)(0x63B71465)
+I (..\Cfg\app_cfg.h)(0x67F7CCE1)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x588B8344)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x588B8344)
+I (..\Cfg\os_cfg.h)(0x67F7EB5B)
+I (..\Port\os_cpu.h)(0x67F80485)
+I (..\Core\os_trace.h)(0x63B71465)
+F (..\Core\os_sem.c)(0x63B71465)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\Core -I ..\Cfg -I ..\Port -I ..\Source -I ..\User -I ..\Hardware -I ..\Startup-I.\RTE\_Target_1-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.17.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F401xE-o .\objects\os_sem.o --omf_browse .\objects\os_sem.crf --depend .\objects\os_sem.d)
+I (..\Core\ucos_ii.h)(0x63B71465)
+I (..\Cfg\app_cfg.h)(0x67F7CCE1)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x588B8344)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x588B8344)
+I (..\Cfg\os_cfg.h)(0x67F7EB5B)
+I (..\Port\os_cpu.h)(0x67F80485)
+I (..\Core\os_trace.h)(0x63B71465)
+F (..\Core\os_task.c)(0x63B71465)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\Core -I ..\Cfg -I ..\Port -I ..\Source -I ..\User -I ..\Hardware -I ..\Startup-I.\RTE\_Target_1-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.17.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F401xE-o .\objects\os_task.o --omf_browse .\objects\os_task.crf --depend .\objects\os_task.d)
+I (..\Core\ucos_ii.h)(0x63B71465)
+I (..\Cfg\app_cfg.h)(0x67F7CCE1)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x588B8344)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x588B8344)
+I (..\Cfg\os_cfg.h)(0x67F7EB5B)
+I (..\Port\os_cpu.h)(0x67F80485)
+I (..\Core\os_trace.h)(0x63B71465)
+F (..\Core\os_time.c)(0x63B71465)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\Core -I ..\Cfg -I ..\Port -I ..\Source -I ..\User -I ..\Hardware -I ..\Startup-I.\RTE\_Target_1-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.17.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F401xE-o .\objects\os_time.o --omf_browse .\objects\os_time.crf --depend .\objects\os_time.d)
+I (..\Core\ucos_ii.h)(0x63B71465)
+I (..\Cfg\app_cfg.h)(0x67F7CCE1)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x588B8344)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x588B8344)
+I (..\Cfg\os_cfg.h)(0x67F7EB5B)
+I (..\Port\os_cpu.h)(0x67F80485)
+I (..\Core\os_trace.h)(0x63B71465)
+F (..\Core\os_tmr.c)(0x63B71465)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\Core -I ..\Cfg -I ..\Port -I ..\Source -I ..\User -I ..\Hardware -I ..\Startup-I.\RTE\_Target_1-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.17.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F401xE-o .\objects\os_tmr.o --omf_browse .\objects\os_tmr.crf --depend .\objects\os_tmr.d)
+I (..\Core\ucos_ii.h)(0x63B71465)
+I (..\Cfg\app_cfg.h)(0x67F7CCE1)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x588B8344)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x588B8344)
+I (..\Cfg\os_cfg.h)(0x67F7EB5B)
+I (..\Port\os_cpu.h)(0x67F80485)
+I (..\Core\os_trace.h)(0x63B71465)
+F (..\Core\os_trace.h)(0x63B71465)()
+F (..\Core\ucos_ii.c)(0x63B71465)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\Core -I ..\Cfg -I ..\Port -I ..\Source-I.\RTE\_Target_1-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.17.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F401xE-o .\objects\ucos_ii.o --omf_browse .\objects\ucos_ii.crf --depend .\objects\ucos_ii.d)
+I (..\Core\ucos_ii.h)(0x63B71465)
+I (..\Cfg\app_cfg.h)(0x67C6E9C6)
+I (..\Cfg\os_cfg.h)(0x67C6EC3A)
+I (..\Port\os_cpu.h)(0x67C6EADA)
+I (..\Core\os_trace.h)(0x63B71465)
+I (..\Core\os_core.c)(0x63B71465)
+I (..\Core\os_flag.c)(0x63B71465)
+I (..\Core\os_mbox.c)(0x63B71465)
+I (..\Core\os_mem.c)(0x63B71465)
+I (..\Core\os_mutex.c)(0x63B71465)
+I (..\Core\os_q.c)(0x63B71465)
+I (..\Core\os_sem.c)(0x63B71465)
+I (..\Core\os_task.c)(0x63B71465)
+I (..\Core\os_time.c)(0x63B71465)
+I (..\Core\os_tmr.c)(0x63B71465)
+F (..\Core\ucos_ii.h)(0x63B71465)()
+F (..\Port\os_cpu.h)(0x67F80485)()
+F (..\Port\os_cpu_c.c)(0x67F8045D)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\Core -I ..\Cfg -I ..\Port -I ..\Source -I ..\User -I ..\Hardware -I ..\Startup-I.\RTE\_Target_1-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.17.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F401xE-o .\objects\os_cpu_c.o --omf_browse .\objects\os_cpu_c.crf --depend .\objects\os_cpu_c.d)
+I (..\Core\ucos_ii.h)(0x63B71465)
+I (..\Cfg\app_cfg.h)(0x67F7CCE1)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x588B8344)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x588B8344)
+I (..\Cfg\os_cfg.h)(0x67F7EB5B)
+I (..\Port\os_cpu.h)(0x67F80485)
+I (..\Core\os_trace.h)(0x63B71465)
+F (..\Port\os_cpu_a.s)(0x67F7FA0E)(--cpu Cortex-M4.fp -g --apcs=interwork -I.\RTE\_Target_1-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.17.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include--pd "__UVISION_VERSION SETA 524" --pd "STM32F401xE SETA 1"--list .\listings\os_cpu_a.lst --xref -o .\objects\os_cpu_a.o --depend .\objects\os_cpu_a.d)
+F (..\Port\myHook.c)(0x67F10066)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\Core -I ..\Cfg -I ..\Port -I ..\Source -I ..\User -I ..\Hardware -I ..\Startup-I.\RTE\_Target_1-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.17.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F401xE-o .\objects\myhook.o --omf_browse .\objects\myhook.crf --depend .\objects\myhook.d)
+I (..\Core\os.h)(0x63B71465)
+I (..\Core\ucos_ii.h)(0x63B71465)
+I (..\Cfg\app_cfg.h)(0x67F7CCE1)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x588B8344)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x588B8344)
+I (..\Cfg\os_cfg.h)(0x67F7EB5B)
+I (..\Port\os_cpu.h)(0x67F80485)
+I (..\Core\os_trace.h)(0x63B71465)
+F (..\Cfg\app_cfg.h)(0x67F7CCE1)()
+F (..\Cfg\os_cfg.h)(0x67F7EB5B)()
+F (..\User\main.c)(0x67F7FF74)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\Core -I ..\Cfg -I ..\Port -I ..\Source -I ..\User -I ..\Hardware -I ..\Startup-I.\RTE\_Target_1-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.17.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F401xE-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+I (..\Core\ucos_ii.h)(0x63B71465)
+I (..\Cfg\app_cfg.h)(0x67F7CCE1)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x588B8344)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x588B8344)
+I (..\Cfg\os_cfg.h)(0x67F7EB5B)
+I (..\Port\os_cpu.h)(0x67F80485)
+I (..\Core\os_trace.h)(0x63B71465)
+I (..\User\Task.h)(0x67F11609)
+I (..\Hardware\usart.h)(0x67F4E6C9)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
+F (..\User\Task.c)(0x67F7FF74)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\Core -I ..\Cfg -I ..\Port -I ..\Source -I ..\User -I ..\Hardware -I ..\Startup-I.\RTE\_Target_1-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.17.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F401xE-o .\objects\task.o --omf_browse .\objects\task.crf --depend .\objects\task.d)
+I (..\User\Task.h)(0x67F11609)
+I (..\Hardware\usart.h)(0x67F4E6C9)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x588B8344)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
+I (..\Core\os.h)(0x63B71465)
+I (..\Core\ucos_ii.h)(0x63B71465)
+I (..\Cfg\app_cfg.h)(0x67F7CCE1)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x588B8344)
+I (..\Cfg\os_cfg.h)(0x67F7EB5B)
+I (..\Port\os_cpu.h)(0x67F80485)
+I (..\Core\os_trace.h)(0x63B71465)
+F (..\User\Task.h)(0x67F11609)()
+F (..\User\myScratterLoad.s)(0x67F7F764)(--cpu Cortex-M4.fp -g --apcs=interwork -I.\RTE\_Target_1-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.17.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include--pd "__UVISION_VERSION SETA 524" --pd "STM32F401xE SETA 1"--list .\listings\myscratterload.lst --xref -o .\objects\myscratterload.o --depend .\objects\myscratterload.d)
+F (..\Startup\core_cm4.h)(0x573CA1AC)()
+F (..\Startup\core_cmFunc.h)(0x573CA1AB)()
+F (..\Startup\core_cmInstr.h)(0x573CA1AB)()
+F (..\Startup\core_cmSimd.h)(0x573CA1AB)()
+F (..\Startup\startup_stm32f401xx.s)(0x67F7D262)(--cpu Cortex-M4.fp -g --apcs=interwork -I.\RTE\_Target_1-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.17.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include--pd "__UVISION_VERSION SETA 524" --pd "STM32F401xE SETA 1"--list .\listings\startup_stm32f401xx.lst --xref -o .\objects\startup_stm32f401xx.o --depend .\objects\startup_stm32f401xx.d)
+F (..\Hardware\LED.c)(0x67F67605)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\Core -I ..\Cfg -I ..\Port -I ..\Source -I ..\User -I ..\Hardware -I ..\Startup-I.\RTE\_Target_1-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.17.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F401xE-o .\objects\led.o --omf_browse .\objects\led.crf --depend .\objects\led.d)
+I (..\Core\os.h)(0x63B71465)
+I (..\Core\ucos_ii.h)(0x63B71465)
+I (..\Cfg\app_cfg.h)(0x67F7CCE1)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x588B8344)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x588B8344)
+I (..\Cfg\os_cfg.h)(0x67F7EB5B)
+I (..\Port\os_cpu.h)(0x67F80485)
+I (..\Core\os_trace.h)(0x63B71465)
+F (..\Hardware\LED.h)(0x67F14773)()
+F (..\Hardware\usart.c)(0x67F78156)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\Core -I ..\Cfg -I ..\Port -I ..\Source -I ..\User -I ..\Hardware -I ..\Startup-I.\RTE\_Target_1-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.17.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F401xE-o .\objects\usart.o --omf_browse .\objects\usart.crf --depend .\objects\usart.d)
+I (..\Hardware\usart.h)(0x67F4E6C9)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x588B8344)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
+F (..\Hardware\usart.h)(0x67F4E6C9)()
