@@ -7,3 +7,12 @@
 .\objects\myhook.o: .\ports\os_cfg.h
 .\objects\myhook.o: .\ports\os_cpu.h
 .\objects\myhook.o: .\core\os_trace.h
+.\objects\myhook.o: .\Trace\OS\os_trace_events.h
+.\objects\myhook.o: .\Trace\Segger\SEGGER_SYSVIEW.h
+.\objects\myhook.o: .\Trace\Segger\SEGGER.h
+.\objects\myhook.o: .\Trace\Cfg\Global.h
+.\objects\myhook.o: .\Trace\Segger\SEGGER_SYSVIEW_ConfDefaults.h
+.\objects\myhook.o: .\Trace\Cfg\SEGGER_SYSVIEW_Conf.h
+.\objects\myhook.o: .\Trace\Cfg\SEGGER_RTT_Conf.h
+.\objects\myhook.o: .\core\ucos_ii.h
+.\objects\myhook.o: .\Trace\OS\Config\os_cfg_trace.h

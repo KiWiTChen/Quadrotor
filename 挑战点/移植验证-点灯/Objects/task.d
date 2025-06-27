@@ -11,3 +11,12 @@
 .\objects\task.o: .\ports\os_cfg.h
 .\objects\task.o: .\ports\os_cpu.h
 .\objects\task.o: .\core\os_trace.h
+.\objects\task.o: .\Trace\OS\os_trace_events.h
+.\objects\task.o: .\Trace\Segger\SEGGER_SYSVIEW.h
+.\objects\task.o: .\Trace\Segger\SEGGER.h
+.\objects\task.o: .\Trace\Cfg\Global.h
+.\objects\task.o: .\Trace\Segger\SEGGER_SYSVIEW_ConfDefaults.h
+.\objects\task.o: .\Trace\Cfg\SEGGER_SYSVIEW_Conf.h
+.\objects\task.o: .\Trace\Cfg\SEGGER_RTT_Conf.h
+.\objects\task.o: .\core\ucos_ii.h
+.\objects\task.o: .\Trace\OS\Config\os_cfg_trace.h

@@ -11,7 +11,7 @@ void Show_GY86(void){
 		 OLED_ShowNum(2,6,x, 5);
 		 OLED_ShowNum(3,6,y, 5);
 		 OLED_ShowNum(4,6,z, 5);
-     BLE_Printf ("%5d\n",AX);
+			BLE_Printf ("%5d\n",AX);
 		 BLE_Printf ("%5d\n",AY);
 		 BLE_Printf ("%5d\n",AZ);
 		 BLE_Printf ("%5d\n",GX);

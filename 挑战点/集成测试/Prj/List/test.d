@@ -1,7 +1,7 @@
 .\list\test.o: ..\User\Test.c
 .\list\test.o: ..\CMSIS\stm32f4xx.h
 .\list\test.o: ..\CMSIS\core_cm4.h
-.\list\test.o: D:\Keil_v5\ARM\compile\Bin\..\include\stdint.h
+.\list\test.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\list\test.o: ..\CMSIS\core_cmInstr.h
 .\list\test.o: ..\CMSIS\core_cmFunc.h
 .\list\test.o: ..\CMSIS\core_cmSimd.h
@@ -30,5 +30,5 @@
 .\list\test.o: ..\Hardware\GY86.h
 .\list\test.o: ..\Hardware\OLED.h
 .\list\test.o: ..\Hardware\ATKBLE01.h
-.\list\test.o: D:\Keil_v5\ARM\compile\Bin\..\include\stdio.h
-.\list\test.o: D:\Keil_v5\ARM\compile\Bin\..\include\stdarg.h
+.\list\test.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\list\test.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h

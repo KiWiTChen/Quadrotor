@@ -37,6 +37,7 @@ int main(void){
 		PWM_Init();
     GY86_Init();  
 	  BLE_Init();
+	OLED_Init();
 
     PWM_SetCompareAll(1000);
 		Delay_s(1);

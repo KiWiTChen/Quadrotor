@@ -1,7 +1,7 @@
 .\list\delay.o: ..\System\Delay.c
 .\list\delay.o: ..\CMSIS\stm32f4xx.h
 .\list\delay.o: ..\CMSIS\core_cm4.h
-.\list\delay.o: D:\Keil_v5\ARM\compile\Bin\..\include\stdint.h
+.\list\delay.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\list\delay.o: ..\CMSIS\core_cmInstr.h
 .\list\delay.o: ..\CMSIS\core_cmFunc.h
 .\list\delay.o: ..\CMSIS\core_cmSimd.h

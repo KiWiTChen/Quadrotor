@@ -1,7 +1,7 @@
 .\list\oled.o: ..\Hardware\OLED.c
 .\list\oled.o: ..\CMSIS\stm32f4xx.h
 .\list\oled.o: ..\CMSIS\core_cm4.h
-.\list\oled.o: D:\Keil_v5\ARM\compile\Bin\..\include\stdint.h
+.\list\oled.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\list\oled.o: ..\CMSIS\core_cmInstr.h
 .\list\oled.o: ..\CMSIS\core_cmFunc.h
 .\list\oled.o: ..\CMSIS\core_cmSimd.h

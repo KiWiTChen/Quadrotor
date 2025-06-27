@@ -2,7 +2,7 @@
 .\list\stm32f4xx_pwr.o: ..\Library\inc\stm32f4xx_pwr.h
 .\list\stm32f4xx_pwr.o: ..\CMSIS\stm32f4xx.h
 .\list\stm32f4xx_pwr.o: ..\CMSIS\core_cm4.h
-.\list\stm32f4xx_pwr.o: D:\Keil_v5\ARM\compile\Bin\..\include\stdint.h
+.\list\stm32f4xx_pwr.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\list\stm32f4xx_pwr.o: ..\CMSIS\core_cmInstr.h
 .\list\stm32f4xx_pwr.o: ..\CMSIS\core_cmFunc.h
 .\list\stm32f4xx_pwr.o: ..\CMSIS\core_cmSimd.h

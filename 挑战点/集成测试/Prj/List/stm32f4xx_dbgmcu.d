@@ -2,7 +2,7 @@
 .\list\stm32f4xx_dbgmcu.o: ..\Library\inc\stm32f4xx_dbgmcu.h
 .\list\stm32f4xx_dbgmcu.o: ..\CMSIS\stm32f4xx.h
 .\list\stm32f4xx_dbgmcu.o: ..\CMSIS\core_cm4.h
-.\list\stm32f4xx_dbgmcu.o: D:\Keil_v5\ARM\compile\Bin\..\include\stdint.h
+.\list\stm32f4xx_dbgmcu.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\list\stm32f4xx_dbgmcu.o: ..\CMSIS\core_cmInstr.h
 .\list\stm32f4xx_dbgmcu.o: ..\CMSIS\core_cmFunc.h
 .\list\stm32f4xx_dbgmcu.o: ..\CMSIS\core_cmSimd.h

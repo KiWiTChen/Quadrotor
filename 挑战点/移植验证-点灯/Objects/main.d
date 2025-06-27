@@ -6,6 +6,15 @@
 .\objects\main.o: .\ports\os_cfg.h
 .\objects\main.o: .\ports\os_cpu.h
 .\objects\main.o: .\core\os_trace.h
+.\objects\main.o: .\Trace\OS\os_trace_events.h
+.\objects\main.o: .\Trace\Segger\SEGGER_SYSVIEW.h
+.\objects\main.o: .\Trace\Segger\SEGGER.h
+.\objects\main.o: .\Trace\Cfg\Global.h
+.\objects\main.o: .\Trace\Segger\SEGGER_SYSVIEW_ConfDefaults.h
+.\objects\main.o: .\Trace\Cfg\SEGGER_SYSVIEW_Conf.h
+.\objects\main.o: .\Trace\Cfg\SEGGER_RTT_Conf.h
+.\objects\main.o: .\core\ucos_ii.h
+.\objects\main.o: .\Trace\OS\Config\os_cfg_trace.h
 .\objects\main.o: user\Task.h
 .\objects\main.o: .\hardware\usart.h
 .\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h

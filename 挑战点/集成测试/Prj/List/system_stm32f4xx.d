@@ -1,7 +1,7 @@
 .\list\system_stm32f4xx.o: ..\CMSIS\system_stm32f4xx.c
 .\list\system_stm32f4xx.o: ..\CMSIS\stm32f4xx.h
 .\list\system_stm32f4xx.o: ..\CMSIS\core_cm4.h
-.\list\system_stm32f4xx.o: D:\Keil_v5\ARM\compile\Bin\..\include\stdint.h
+.\list\system_stm32f4xx.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\list\system_stm32f4xx.o: ..\CMSIS\core_cmInstr.h
 .\list\system_stm32f4xx.o: ..\CMSIS\core_cmFunc.h
 .\list\system_stm32f4xx.o: ..\CMSIS\core_cmSimd.h

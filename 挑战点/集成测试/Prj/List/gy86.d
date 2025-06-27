@@ -1,7 +1,7 @@
 .\list\gy86.o: ..\Hardware\GY86.c
 .\list\gy86.o: ..\CMSIS\stm32f4xx.h
 .\list\gy86.o: ..\CMSIS\core_cm4.h
-.\list\gy86.o: D:\Keil_v5\ARM\compile\Bin\..\include\stdint.h
+.\list\gy86.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\list\gy86.o: ..\CMSIS\core_cmInstr.h
 .\list\gy86.o: ..\CMSIS\core_cmFunc.h
 .\list\gy86.o: ..\CMSIS\core_cmSimd.h
