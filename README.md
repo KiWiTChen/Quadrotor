@@ -27,6 +27,12 @@
 
 <img src="README.assets/3D_transboardv2.1.png" alt="3D_transboardv2.1" style="zoom:33%;" />
 
+## 操作系统
+
+μC/OS Ⅱ v2.93.01 
+
+[源代码仓库](https://github.com/weston-embedded/uC-OS2)
+
 ## 挑战点
 
 主要是项目学习过程中的学习路径，可能与实际开发有所不同。
@@ -55,7 +61,7 @@
 - [x] 任务上下文切换
 - [x] uc/OS II 在STM32上的移植 Pt.I
 - [x] uc/OS II 在STM32上的移植 Pt.II
-- [ ] 应用子系统设计/System View与任务级调试
+- [x] 应用子系统设计/System View与任务级调试
 - [x] 系统工程重构与优化
 - [x] 内核资源互斥访问机制
 - [ ] 用MakeFile构建自己的工程
