@@ -1,0 +1,17 @@
+.\objects\os_mutex.o: core\os_mutex.c
+.\objects\os_mutex.o: .\core\ucos_ii.h
+.\objects\os_mutex.o: .\ports\app_cfg.h
+.\objects\os_mutex.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+.\objects\os_mutex.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\os_mutex.o: .\ports\os_cfg.h
+.\objects\os_mutex.o: .\ports\os_cpu.h
+.\objects\os_mutex.o: .\core\os_trace.h
+.\objects\os_mutex.o: .\Trace\OS\os_trace_events.h
+.\objects\os_mutex.o: .\Trace\Segger\SEGGER_SYSVIEW.h
+.\objects\os_mutex.o: .\Trace\Segger\SEGGER.h
+.\objects\os_mutex.o: .\Trace\Cfg\Global.h
+.\objects\os_mutex.o: .\Trace\Segger\SEGGER_SYSVIEW_ConfDefaults.h
+.\objects\os_mutex.o: .\Trace\Cfg\SEGGER_SYSVIEW_Conf.h
+.\objects\os_mutex.o: .\Trace\Cfg\SEGGER_RTT_Conf.h
+.\objects\os_mutex.o: .\core\ucos_ii.h
+.\objects\os_mutex.o: .\Trace\OS\Config\os_cfg_trace.h

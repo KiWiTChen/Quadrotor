@@ -1,0 +1,9 @@
+.\objects\myapphook.o: ports\myAppHook.c
+.\objects\myapphook.o: .\core\os.h
+.\objects\myapphook.o: .\core\ucos_ii.h
+.\objects\myapphook.o: .\ports\app_cfg.h
+.\objects\myapphook.o: D:\Keil_v5\ARM\compile\Bin\..\include\stdarg.h
+.\objects\myapphook.o: D:\Keil_v5\ARM\compile\Bin\..\include\stdio.h
+.\objects\myapphook.o: .\ports\os_cfg.h
+.\objects\myapphook.o: .\ports\os_cpu.h
+.\objects\myapphook.o: .\core\os_trace.h
