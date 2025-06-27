@@ -7,3 +7,12 @@
 .\objects\led.o: .\ports\os_cfg.h
 .\objects\led.o: .\ports\os_cpu.h
 .\objects\led.o: .\core\os_trace.h
+.\objects\led.o: .\Trace\OS\os_trace_events.h
+.\objects\led.o: .\Trace\Segger\SEGGER_SYSVIEW.h
+.\objects\led.o: .\Trace\Segger\SEGGER.h
+.\objects\led.o: .\Trace\Cfg\Global.h
+.\objects\led.o: .\Trace\Segger\SEGGER_SYSVIEW_ConfDefaults.h
+.\objects\led.o: .\Trace\Cfg\SEGGER_SYSVIEW_Conf.h
+.\objects\led.o: .\Trace\Cfg\SEGGER_RTT_Conf.h
+.\objects\led.o: .\core\ucos_ii.h
+.\objects\led.o: .\Trace\OS\Config\os_cfg_trace.h

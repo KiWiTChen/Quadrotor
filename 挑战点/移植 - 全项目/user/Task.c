@@ -33,8 +33,9 @@ void TIM2_IRQHandler(void)
             Cal++;
             
             // 当8通道数据收齐时发布信号量
-            if(Cal >= 8){
+            if(Cal == 8){
                 OSSemPost(PPM_Sem);  // 通知任务
+				Cal=0;//重置计数器
             }
         }
         OS_EXIT_CRITICAL();
@@ -46,30 +47,34 @@ void TIM2_IRQHandler(void)
 }
 
 void TASK_ShowGY86Data(void *p_arg){
+
 	while(1){
-		GY86_GetData(&x, &y, &z, &AX, &AY, &AZ, &GX, &GY, &GZ);
-				 OLED_ShowNum(2,6,x, 5);
-				 OLED_ShowNum(3,6,y, 5);
-				 OLED_ShowNum(4,6,z, 5);
-			 BLE_Printf ("%5d\n",AX);
-				 BLE_Printf ("%5d\n",AY);
-				 BLE_Printf ("%5d\n",AZ);
-				 BLE_Printf ("%5d\n",GX);
-				 BLE_Printf ("%5d\n",GY);
-				 BLE_Printf ("%5d\n",GZ);	
+		
+				 GY86_GetData(&x, &y, &z, &AX, &AY, &AZ, &GX, &GY, &GZ);
+		
+				 BLE_Printf ("01 %5d\n",AX);
+				 BLE_Printf ("02 %5d\n",AY);
+				 BLE_Printf ("03 %5d\n",AZ);
+				 BLE_Printf ("04 %5d\n",GX);
+				 BLE_Printf ("05 %5d\n",GY);
+				 BLE_Printf ("06 %5d\n",GZ);
+	
 	}
 }
 void TASK_ChangeMotor(void *p_arg){
-	INT8U err;
-    
+	
+    PPM_Sem = OSSemCreate(0);
     while(1){
+		INT8U err;
         // 等待信号量
         OSSemPend(PPM_Sem, 0, &err); 
         // 获取数据访问权
-        OSMutexPend(Data_Mutex, 0, &err);
         uint16_t throttle = Rc_Data[1];  //通道1控制油门
-        OSMutexPost(Data_Mutex);
         // 设置电机转速
-        PWM_SetCompareAll(throttle);
+		if(err==OS_ERR_NONE){
+			
+			PWM_SetCompareAll(throttle);
+		}
     }
+	
 }

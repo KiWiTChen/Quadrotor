@@ -32,6 +32,10 @@
 ".\objects\stm32f4xx_rcc.o"
 ".\objects\stm32f4xx_i2c.o"
 ".\objects\stm32f4xx_tim.o"
+".\objects\segger_sysview_config_ucosii.o"
+".\objects\segger_sysview_ucosii.o"
+".\objects\segger_rtt.o"
+".\objects\segger_sysview.o"
 --strict --scatter ".\Objects\ÒÆÖ²Ò».sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

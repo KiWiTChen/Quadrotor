@@ -6,3 +6,12 @@
 .\objects\os_dbg_r.o: .\ports\os_cfg.h
 .\objects\os_dbg_r.o: .\ports\os_cpu.h
 .\objects\os_dbg_r.o: .\core\os_trace.h
+.\objects\os_dbg_r.o: .\Trace\OS\os_trace_events.h
+.\objects\os_dbg_r.o: .\Trace\Segger\SEGGER_SYSVIEW.h
+.\objects\os_dbg_r.o: .\Trace\Segger\SEGGER.h
+.\objects\os_dbg_r.o: .\Trace\Cfg\Global.h
+.\objects\os_dbg_r.o: .\Trace\Segger\SEGGER_SYSVIEW_ConfDefaults.h
+.\objects\os_dbg_r.o: .\Trace\Cfg\SEGGER_SYSVIEW_Conf.h
+.\objects\os_dbg_r.o: .\Trace\Cfg\SEGGER_RTT_Conf.h
+.\objects\os_dbg_r.o: .\core\ucos_ii.h
+.\objects\os_dbg_r.o: .\Trace\OS\Config\os_cfg_trace.h
