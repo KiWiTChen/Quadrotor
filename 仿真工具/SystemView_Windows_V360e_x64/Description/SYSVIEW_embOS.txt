@@ -1,0 +1,299 @@
+# /*********************************************************************
+# *                     SEGGER Microcontroller GmbH                    *
+# *                        The Embedded Experts                        *
+# **********************************************************************
+# *                                                                    *
+# *       (c) 1995 - 2022 SEGGER Microcontroller GmbH                  *
+# *                                                                    *
+# *       Internet: segger.com  Support: support_embos@segger.com      *
+# *                                                                    *
+# **********************************************************************
+# *                                                                    *
+# *       embOS * Real time operating system                           *
+# *                                                                    *
+# *       Please note:                                                 *
+# *                                                                    *
+# *       Knowledge of this file may under no circumstances            *
+# *       be used to write a similar product or a real-time            *
+# *       operating system for in-house use.                           *
+# *                                                                    *
+# *       Thank you for your fairness !                                *
+# *                                                                    *
+# **********************************************************************
+# *                                                                    *
+# *       OS version: V5.18.0.0                                        *
+# *                                                                    *
+# **********************************************************************
+#
+# -------------------------- END-OF-HEADER -----------------------------
+# File    : SYSVIEW_embOS.txt
+# Purpose : embOS description file for SEGGER SystemView.
+#           Please copy this file to your SystemView installation folder,
+#           e.g. c:\Program Files\SEGGER\SystemView_V250\Description\.
+# */
+
+#
+# Types for parameter formatters
+#
+NamedType ResetMode 0=OS_EVENT_RESET_MODE_SEMIAUTO 1=OS_EVENT_RESET_MODE_MANUAL 2=OS_EVENT_RESET_MODE_AUTO
+NamedType Bool      0=false 1=true
+#
+# Task States
+#
+TaskState 0xFC 0=Ready, 4=Delayed, 8=Waiting for Task Event, 12=Waiting for Task Event with timeout, 16=Waiting for Mutex, 20=Waiting for Mutex with timeout, 24=Blocked, 28=Blocked with timeout, 32=Waiting for Semaphore, 36=Waiting for Semaphore with timeout, 40=Waiting for Memory Pool, 44=Waiting for Memory Pool with Timeout, 48=Waiting for message in Queue, 52=Waiting for message in Queue with timeout, 56=Waiting for space in Mailbox, 60=Waiting for space in Mailbox with timeout, 64=Waiting for message in Mailbox, 68=Waiting for message in Mailbox with timeout, 72=Waiting for Event Object, 76=Waiting for Event Object with timeout, 80=Waiting for space in Queue, 84=Waiting for space in Queue with timeout, 160=Waiting for Memory Pool, 164=Waiting for Memory Pool with timeout
+
+#
+# Preempting Task States
+#
+PreemptingTaskStates 0
+
+#
+# API Functions
+#
+42        OS_TASK_Delay                       %u ticks
+43        OS_TASK_DelayUntil                  %u ticks
+44        OS_TASK_SetPriority                 pTask = %t, Priority = %u
+45        OS_TASK_Wake                        pTask = %t
+46        OS_TASK_Create                      pTask = %t, Priority = %u, pStack = %p, StackSize = %u Bytes
+47        OS_TASK_Terminate                   pTask = %t
+48        OS_TASK_Suspend                     pTask = %t
+49        OS_TASK_Resume                      pTask = %t
+50        OS_TASK_CreateEx                    pTask = %t, Priority = %u, pStack = %p, StackSize = %u Bytes, pContext = %p
+51        OS_TASK_Yield
+52        OS_TASKEVENT_GetBlocked             EventMask = %b                                                            | Returns %u
+53        OS_TASKEVENT_GetTimed               EventMask = %b, Timeout = %u ticks                                        | Returns %u
+54        OS_TASKEVENT_Set                    pTask = %t, Event = %b
+55        OS_TASKEVENT_Clear                  pTask = %t                                                                | Returns %u
+62        OS_MAILBOX_Create                   pMB = %I, sizeofMsg = %u, maxnofMsg = %u, Buffer = %p
+63        OS_MAILBOX_Clear                    pMB = %I
+64        OS_MAILBOX_Delete                   pMB = %I
+65        OS_MAILBOX_PutBlocked               pMB = %I, pMail = %p
+66        OS_MAILBOX_GetBlocked               pMB = %I, pDest = %p
+67        OS_MAILBOX_Put                      pMB = %I, pMail = %p                                                      | Returns %u
+68        OS_MAILBOX_Get                      pMB = %I, pDest = %p                                                      | Returns %u
+69        OS_MAILBOX_PutTimed                 pMB = %I, pMail = %p, Timeout = %u ticks                                  | Returns %Bool
+70        OS_MAILBOX_GetTimed                 pMB = %I, pDest = %p, Timeout = %u ticks                                  | Returns %u
+71        OS_MAILBOX_WaitBlocked              pMB = %I
+72        OS_MAILBOX_PutBlocked1              pMB = %I, pMail = %p
+73        OS_MAILBOX_GetBlocked1              pMB = %I, pDest = %p
+74        OS_MAILBOX_Put1                     pMB = %I, pMail = %p                                                      | Returns %u
+75        OS_MAILBOX_Get1                     pMB = %I, pDest = %p                                                      | Returns %u
+76        OS_MAILBOX_PutTimed1                pMB = %I, pMail = %p, Timeout = %u ticks                                  | Returns %Bool
+77        OS_MAILBOX_GetTimed1                pMB = %I, pMail = %p, Timeout = %u ticks                                  | Returns %u
+78        OS_MAILBOX_PutFrontBlocked          pMB = %I, pMail = %p
+79        OS_MAILBOX_PutFrontBlocked1         pMB = %I, pMail = %p
+80        OS_MAILBOX_PutFront                 pMB = %I, pMail = %p                                                      | Returns %u
+81        OS_MAILBOX_PutFront1                pMB = %I, pMail = %p                                                      | Returns %u
+82        OS_MUTEX_Create                     pMutex = %I
+83        OS_MUTEX_LockBlocked                pMutex = %I                                                               | Returns %u
+84        OS_MUTEX_Unlock                     pMutex = %I
+85        OS_MUTEX_Lock                       pMutex = %I                                                               | Returns %u
+86        OS_MUTEX_GetValue                   pMutex = %I                                                               | Returns %u
+87        OS_MUTEX_Delete                     pMutex = %I
+88        OS_MUTEX_IsMutex                    pMutex = %I                                                               | Returns %Bool
+91        OS_MAILBOX_WaitTimed                pMB = %I, Timeout = %u ticks                                              | Returns %u
+92        OS_SEMAPHORE_Create                 pSema = %I, InitValue = %u
+93        OS_SEMAPHORE_Delete                 pSema = %I
+94        OS_SEMAPHORE_Give                   pSema = %I
+95        OS_SEMAPHORE_TakeBlocked            pSema = %I
+96        OS_SEMAPHORE_TakeTimed              pSema = %I, Timeout = %u ticks                                            | Returns %Bool
+97        OS_SEMAPHORE_GiveMax                pSema = %I, MaxValue = %u
+98        OS_SEMAPHORE_SetValue               pSema = %I, Value = %u                                                    | Returns %u
+99        OS_SEMAPHORE_Take                   pSema = %I                                                                | Returns %Bool
+102       OS_TIMER_Create                     pTimer = %I, Callback = %p, Timeout = %u ticks
+103       OS_TIMER_Delete                     pTimer = %I
+104       OS_TIMER_Start                      pTimer = %I
+105       OS_TIMER_Stop                       pTimer = %I
+106       OS_TIMER_Restart                    pTimer = %I
+107       OS_TIMER_SetPeriod                  pTimer = %I, Period = %u ticks
+108       OS_TIMER_CreateEx                   pTimerEx = %I, Callback = %p, Timeout = %u ticks, pData = %p
+112       OS_HEAP_malloc                      %u Bytes                                                                  | Returns %p
+113       OS_HEAP_free                        pMemBlock = %p
+114       OS_HEAP_realloc                     pMemBlock = %p, NewSize = %u Bytes                                        | Returns %p
+122       OS_MEMPOOL_Create                   pMEMF = %I, pPool = %p, NumBlocks = %u, BlockSize = %u Bytes
+123       OS_MEMPOOL_Delete                   pMEMF = %I
+124       OS_MEMPOOL_AllocBlocked             pMEMF = %I                                                                | Returns %p
+163       OS_TASK_Delay_us                    %u us
+164       OS_TASK_SuspendAll
+165       OS_TASK_ResumeAll
+166       OS_TASKEVENT_GetSingleBlocked       EventMask = %b                                                            | Returns %u
+167       OS_TASKEVENT_GetSingleTimed         EventMask = %b, Timeout = %u ticks                                        | Returns %u
+168       OS_EVENT_Pulse                      pEvent = %I
+169       OS_EVENT_Reset                      pEvent = %I
+170       OS_EVENT_Set                        pEvent = %I
+171       OS_EVENT_GetBlocked                 pEvent = %I
+172       OS_EVENT_GetTimed                   pEvent = %I, Timeout = %u ticks                                           | Returns %u
+173       OS_EVENT_Create                     pEvent = %I
+174       OS_EVENT_CreateEx                   pEvent = %I, Mode = %u
+175       OS_EVENT_Delete                     pEvent = %I
+176       OS_MAILBOX_Peek                     pMB = %I, pDest = %p                                                      | Returns %u
+177       OS_QUEUE_Create                     pQ = %I, Size = %u Bytes
+178       OS_QUEUE_Delete                     pQ = %I
+179       OS_QUEUE_Clear                      pQ = %I
+180       OS_QUEUE_PutBlocked                 pQ = %I, pSrc = %p, Size = %u Bytes
+181       OS_QUEUE_Put                        pQ = %I, pSrc = %p, Size = %u Bytes                                       | Returns %u
+182       OS_QUEUE_PutTimed                   pQ = %I, pSrc = %p, Size = %u Bytes, Timeout = %u ticks                   | Returns %u
+183       OS_QUEUE_GetPtrBlocked              pQ = %I, pData = %p                                                       | Returns %u
+184       OS_QUEUE_GetPtr                     pQ = %I, pData = %p                                                       | Returns %u
+185       OS_QUEUE_GetPtrTimed                pQ = %I, pData = %p, Timeout = %u ticks                                   | Returns %u
+186       OS_QUEUE_PeekPtr                    pQ = %I, pData = %p                                                       | Returns %u
+187       OS_QUEUE_Purge                      pQ = %I
+188       OS_MEMPOOL_AllocTimed               pMEMF = %I, Timeout = %u ticks                                            | Returns %p
+189       OS_MEMPOOL_Free                     pMemBlock = %p
+190       OS_MEMPOOL_FreeEx                   pMEMF = %I, pMemBlock = %p
+191       OS_MEMPOOL_Alloc                    pMEMF = %I                                                                | Returns %p
+195       OS_MUTEX_LockTimed                  pMutex = %I, Timeout = %u ticks                                           | Returns %u
+199       OS_TASK_SetName                     pTask = %t, s = %p
+200       OS_TICKLESS_AdjustTime              %u ticks
+201       OS_EVENT_Get                        pEvent = %I                                                               | Returns %u
+202       OS_EVENT_GetResetMode               pEvent = %I                                                               | Returns %ResetMode
+203       OS_EVENT_SetResetMode               pEvent = %I, ResetMode = %ResetMode
+204       OS_TICKLESS_GetNumIdleTicks                                                                                   | Returns %u ticks
+205       OS_TASK_GetNumTasks                                                                                           | Returns %u Tasks
+206       OS_TASK_GetPriority                 pTask = %t                                                                | Returns %u
+207       OS_TASK_GetSuspendCnt               pTask = %t                                                                | Returns %u
+208       OS_MAILBOX_GetPtrBlocked            pMB = %I, ppDest = %p                                                     | Returns %u
+209       OS_POWER_UsageInc                   Index = %u
+210       OS_POWER_UsageDec                   Index = %u
+211       OS_POWER_GetMask                                                                                              | Returns %u
+212       OS_TASK_SetInitialSuspendCnt        SuspendCnt = %u
+213       OS_TIME_Get_us                                                                                                | Returns %u us
+214       OS_TIME_Get_us64                                                                                              | Returns %u us
+217       OS_TICK_AddHook                     pHook = %I, pfUser = %p
+218       OS_TICK_RemoveHook                  pHook = %I
+219       OS_TICKLESS_Start                   Time = %u ticks, Callback = %p
+220       OS_TICKLESS_Stop
+221       OS_SEMAPHORE_GetValue               pSema = %I                                                                | Returns %u
+222       OS_TASKEVENT_Get                    pTask = %t                                                                | Returns %u
+223       OS_TASK_IsTask                      pTask = %t                                                                | Returns %Bool
+224       OS_QUEUE_GetMessageCnt              pQ = %I                                                                   | Returns %u
+225       OS_QUEUE_GetMessageSize             pQ = %I                                                                   | Returns %u
+226       OS_QUEUE_IsInUse                    pQ = %I                                                                   | Returns %Bool
+227       OS_TASK_SetTimeSlice                pTask = %t, TimeSlice = %u ticks                                          | Returns %u
+228       OS_MUTEX_GetOwner                   pMutex = %I                                                               | Returns %t
+229       OS_TIMER_GetPeriod                  pTimer = %I                                                               | Returns %u ticks
+230       OS_TIMER_GetStatus                  pTimer = %I                                                               | Returns %Bool
+231       OS_TIMER_GetRemainingPeriod         pTimer = %I                                                               | Returns %u
+232       OS_TIME_StartMeasurement            pCycle = %I
+233       OS_TIME_StopMeasurement             pCycle = %I
+234       OS_TIME_GetResult_us                pCycle = %I                                                               | Returns %u us
+235       OS_MAILBOX_GetPtr                   pMB = %I, ppDest = %p
+236       OS_MAILBOX_Purge                    pMB = %I
+237       OS_QUEUE_PutBlockedEx               pQ = %p, pSrcList = %p, NumSrc = %u
+238       OS_QUEUE_PutEx                      pQ = %p, pSrcList = %p, NumSrc = %u                                       | Returns %u
+239       OS_QUEUE_PutTimedEx                 pQ = %p, pSrcList = %p, NumSrc = %u, Timeout = %u ticks                   | Returns %u
+240       OS_SPINLOCK_Create                  pSpinlock = %I
+241       OS_SPINLOCK_SW_Create               pSpinlock = %I
+242       OS_SPINLOCK_Lock                    pSpinlock = %I
+243       OS_SPINLOCK_SW_Lock                 pSpinlock = %I, Id = %u
+244       OS_SPINLOCK_Unlock                  pSpinlock = %I
+245       OS_SPINLOCK_SW_Unlock               pSpinlock = %I, Id = %u
+246       OS_TIMER_Trigger                    pTimer = %I
+247       OS_TASK_AddTerminateHook            pHook = %p, pfRoutine = %p
+248       OS_TASK_RemoveAllTerminateHooks
+249       OS_TASK_RemoveTerminateHook         pHook = %p
+250       OS_TASKEVENT_ClearEx                pTask = %t, EventMask = %b                                                | Returns %u
+251       OS_EVENT_GetMask                    pEvent = %I, EventMask = %b                                               | Returns %u
+252       OS_EVENT_SetMask                    pEvent = %I, EventMask = %b
+253       OS_EVENT_GetMaskBlocked             pEvent = %I, EventMask = %b                                               | Returns %u
+254       OS_EVENT_GetMaskTimed               pEvent = %I, EventMask = %b, Timeout = %u ticks                           | Returns %u
+255       OS_WD_Add                           pWD = %p, Timeout = %u ticks
+256       OS_WD_Check
+257       OS_WD_Config                        pfTriggerFunc = %p, pfResetFunc = %p
+258       OS_WD_Remove                        pWD = %p
+259       OS_WD_Trigger                       pWD = %p
+260       OS_EVENT_SetMaskMode                pEvent = %I, EventMask = %b
+261       OS_EVENT_GetMaskMode                pEvent = %I                                                               | Returns %u
+262       OS_ConfigStop                       pContext = %p, Addr = %u, Size = %u
+263       OS_Stop
+264       OS_STACK_SetCheckLimit              %u Percent
+265       OS_STACK_GetCheckLimit                                                                                        | Returns %u Percent
+266       OS_DEBUG_SetObjName                 ID = %I, Name = %p
+267       OS_DEBUG_GetObjName                 ID = %I                                                                   | Returns %p
+268       OS_TASK_SetDefaultStartHook         pHook = %I
+269       OS_DeInit
+270       OS_DEBUG_RemoveObjName              pObjName = %p
+271       OS_TIME_Get_Cycles                                                                                            | Returns %u cycles
+272       OS_TIME_ConvertCycles2us            %u cycles                                                                 | Returns %u us
+273       OS_TIME_Convertus2Cycles            %u us                                                                     | Returns %u cycles
+274       OS_TIME_ConvertCycles2ns            %u cycles                                                                 | Returns %u ns
+275       OS_TIME_Convertns2Cycles            %u ns                                                                     | Returns %u cycles
+276       OS_TASK_AddContextExtension         pExtendContextLink = %p
+277       OS_TASK_GetName                     pTask = %t                                                                | Returns %p
+278       OS_TASK_GetTimeSliceRem             pTask = %t                                                                | Returns %u
+279       OS_TASK_Index2Ptr                   TaskIndex = %u                                                            | Returns %p
+280       OS_TASK_SetContextExtension         pExtendContext = %p
+281       OS_TASK_SetDefaultContextExtension  pExtendContext = %p
+282       OS_MAILBOX_GetMessageCnt            pMB = %I                                                                  | Returns %u
+283       OS_TIME_ConfigSysTimer              pConfig = %p
+284       OS_MEMPOOL_GetBlockSize             pMEMF = %I                                                                | Returns %u
+285       OS_MEMPOOL_GetMaxUsed               pMEMF = %I                                                                | Returns %u
+286       OS_MEMPOOL_GetNumBlocks             pMEMF = %I                                                                | Returns %u
+287       OS_MEMPOOL_GetNumFreeBlocks         pMEMF = %I                                                                | Returns %u
+288       OS_MEMPOOL_IsInPool                 pMEMF = %I                                                                | Returns %u
+289       OS_TICK_Config                      TickFreq = %u Hz, IntFreq = %u Hz
+290       OS_TICK_Handle
+291       OS_TICK_HandleEx
+292       OS_TICK_HandleNoHook
+293       OS_STAT_AddLoadMeasurement          Period = %u ticks, AutoAdjust = %u, DefaultMaxValue = %u
+294       OS_STAT_AddLoadMeasurementEx        Period = %u ticks, AutoAdjust = %u, DefaultMaxValue = %u, pStack = %u
+295       OS_STAT_GetExecTime                 pTask = %t                                                                | Returns %u
+296       OS_STAT_GetLoad                     pTask = %t                                                                | Returns %u
+297       OS_STAT_GetLoadMeasurement                                                                                    | Returns %u
+298       OS_STAT_GetNumActivations           pTask = %t                                                                | Returns %u
+299       OS_STAT_GetNumPreemptions           pTask = %t                                                                | Returns %u
+300       OS_STAT_Sample
+301       OS_STAT_Enable
+302       OS_STAT_Disable
+303       OS_MPU_SwitchToUnprivState
+304       OS_MPU_SwitchToUnprivStateEx
+305       OS_MPU_GetThreadState                                                                                         | Returns %u
+306       OS_MPU_SetAllowedObjects            pTask = %t, pObjList = %u
+307       OS_MPU_ConfigMem                    ROM_BaseAddr = %u, ROM_Size = %u Bytes RAM_BaseAddr = %u, RAM_Size = %u Bytes
+308       OS_MPU_AddRegion                    pTask = %t, BaseAddr = %u, Size = %u Bytes, Permissions = %u, Attributes = %u
+309       OS_MPU_Init                         pAPIList = %p
+310       OS_MPU_SetDeviceDriverList          pList = %p
+311       OS_MPU_ExtendTaskContext
+312       OS_MPU_SetErrorCallback             pFunc = %p
+313       OS_MPU_SetSanityCheckBuffer         pTask = %t, p = %u
+314       OS_MPU_SanityCheck                                                                                            | Returns %u
+315       OS_INFO_GetCPU                                                                                                | Returns %p
+316       OS_INFO_GetLibMode                                                                                            | Returns %p
+317       OS_INFO_GetLibName                                                                                            | Returns %p
+318       OS_INFO_GetModel                                                                                              | Returns %p
+319       OS_INFO_GetVersion                                                                                            | Returns %u
+320       OS_STACK_GetIntStackSpace                                                                                     | Returns %u
+321       OS_STACK_GetIntStackUsed                                                                                      | Returns %u
+322       OS_STACK_GetTaskStackBase           pTask = %t                                                                | Returns %u
+323       OS_STACK_GetTaskStackSize           pTask = %t                                                                | Returns %u
+324       OS_STACK_GetTaskStackSpace          pTask = %t                                                                | Returns %u
+325       OS_STACK_GetTaskStackUsed           pTask = %t                                                                | Returns %u
+326       OS_STACK_GetSysStackSpace                                                                                     | Returns %u
+327       OS_STACK_GetSysStackUsed                                                                                      | Returns %u
+328       OS_TIME_Convertms2Ticks             %u ms                                                                     | Returns %u ticks
+329       OS_TIME_ConvertTicks2ms             %u ticks                                                                  | Returns %u ms
+330       OS_EVENT_ResetMask                  pEvent = %I, EventMask = %b
+331       OS_RWLOCK_Create                    pLock = %p, NumReaders = u
+332       OS_RWLOCK_Delete                    pLock = %p
+333       OS_RWLOCK_RdLock                    pLock = %p                                                                | Returns %u
+334       OS_RWLOCK_RdLockBlocked             pLock = %p
+335       OS_RWLOCK_RdLockTimed               pLock = %p, Timeout = %u ticks                                            | Returns %u
+336       OS_RWLOCK_RdUnlock                  pLock = %p
+337       OS_RWLOCK_WrLock                    pLock = %p                                                                | Returns %u
+338       OS_RWLOCK_WrLockBlocked             pLock = %p
+339       OS_RWLOCK_WrLockTimed               pLock = %p, Timeout = %u ticks                                            | Returns %u
+340       OS_RWLOCK_WrUnlock                  pLock = %p
+341       OS_TIME_ConvertCycles2ms            %u cycles                                                                 | Returns %u ms
+342       OS_TIME_Convertms2Cycles            %u ms                                                                     | Returns %u cycles
+343       OS_MAILBOX_IsInUse                  pMB = %I                                                                  | Returns %Bool
+344       OS_IsRunning                                                                                                  | Returns %Bool
+345       OS_TASK_GetID                                                                                                 | Returns %t
+346       OS_TIMER_GetCurrent                                                                                           | Returns %I
+347       OS_TIME_GetInts                                                                                               | Returns %u
+348       OS_TICKLESS_GetPeriod                                                                                         | Returns %u
+349       OS_TICKLESS_IsExpired                                                                                         | Returns %Bool
+350       OS_INFO_GetTimerFreq                                                                                          | Returns %u
+351       OS_DEBUG_GetError                                                                                             | Returns %u
+352       OS_TASK_GetStatus                                                                                             | Returns %u
+353       OS_Start
+354       OS_TIME_GetResult                   pCycle = %I                                                               | Returns %u cycles

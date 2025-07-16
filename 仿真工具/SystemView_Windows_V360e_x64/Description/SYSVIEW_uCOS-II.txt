@@ -1,0 +1,148 @@
+#
+# OS Options
+#
+Option    ReversePriority
+#
+# Types for parameter formatters
+#
+NamedType OSErr 0=OS_ERR_NONE
+NamedType OSErr 1=OS_ERR_EVENT_TYPE   
+NamedType OSErr 2=OS_ERR_PEND_ISR     
+NamedType OSErr 3=OS_ERR_POST_NULL_PTR
+NamedType OSErr 4=OS_ERR_PEVENT_NULL  
+NamedType OSErr 5=OS_ERR_POST_ISR     
+NamedType OSErr 6=OS_ERR_QUERY_ISR    
+NamedType OSErr 7=OS_ERR_INVALID_OPT  
+NamedType OSErr 8=OS_ERR_ID_INVALID   
+NamedType OSErr 9=OS_ERR_PDATA_NULL   
+NamedType OSErr 10=OS_ERR_TIMEOUT                
+NamedType OSErr 11=OS_ERR_EVENT_NAME_TOO_LONG    
+NamedType OSErr 12=OS_ERR_PNAME_NULL             
+NamedType OSErr 13=OS_ERR_PEND_LOCKED            
+NamedType OSErr 14=OS_ERR_PEND_ABORT             
+NamedType OSErr 15=OS_ERR_DEL_ISR                
+NamedType OSErr 16=OS_ERR_CREATE_ISR             
+NamedType OSErr 17=OS_ERR_NAME_GET_ISR           
+NamedType OSErr 18=OS_ERR_NAME_SET_ISR           
+NamedType OSErr 19=OS_ERR_ILLEGAL_CREATE_RUN_TIME
+NamedType OSErr 20=OS_ERR_MBOX_FULL            
+NamedType OSErr 21=OS_ERR_ILLEGAL_DEL_RUN_TIME
+ 
+NamedType OSErr 30=OS_ERR_Q_FULL               
+NamedType OSErr 31=OS_ERR_Q_EMPTY
+              
+NamedType OSErr 40=OS_ERR_PRIO_EXIST           
+NamedType OSErr 41=OS_ERR_PRIO                 
+NamedType OSErr 42=OS_ERR_PRIO_INVALID
+         
+NamedType OSErr 50=OS_ERR_SCHED_LOCKED         
+NamedType OSErr 51=OS_ERR_SEM_OVF
+              
+NamedType OSErr 60=OS_ERR_TASK_CREATE_ISR      
+NamedType OSErr 61=OS_ERR_TASK_DEL             
+NamedType OSErr 62=OS_ERR_TASK_DEL_IDLE        
+NamedType OSErr 63=OS_ERR_TASK_DEL_REQ         
+NamedType OSErr 64=OS_ERR_TASK_DEL_ISR         
+NamedType OSErr 65=OS_ERR_TASK_NAME_TOO_LONG   
+NamedType OSErr 66=OS_ERR_TASK_NO_MORE_TCB     
+NamedType OSErr 67=OS_ERR_TASK_NOT_EXIST       
+NamedType OSErr 68=OS_ERR_TASK_NOT_SUSPENDED   
+NamedType OSErr 69=OS_ERR_TASK_OPT             
+NamedType OSErr 70=OS_ERR_TASK_RESUME_PRIO     
+NamedType OSErr 71=OS_ERR_TASK_SUSPEND_IDLE    
+NamedType OSErr 72=OS_ERR_TASK_SUSPEND_PRIO    
+NamedType OSErr 73=OS_ERR_TASK_WAITING
+         
+NamedType OSErr 80=OS_ERR_TIME_NOT_DLY         
+NamedType OSErr 81=OS_ERR_TIME_INVALID_MINUTES 
+NamedType OSErr 82=OS_ERR_TIME_INVALID_SECONDS 
+NamedType OSErr 83=OS_ERR_TIME_INVALID_MS      
+NamedType OSErr 84=OS_ERR_TIME_ZERO_DLY        
+NamedType OSErr 85=OS_ERR_TIME_DLY_ISR
+         
+NamedType OSErr 90=OS_ERR_MEM_INVALID_PART     
+NamedType OSErr 91=OS_ERR_MEM_INVALID_BLKS     
+NamedType OSErr 92=OS_ERR_MEM_INVALID_SIZE     
+NamedType OSErr 93=OS_ERR_MEM_NO_FREE_BLKS     
+NamedType OSErr 94=OS_ERR_MEM_FULL             
+NamedType OSErr 95=OS_ERR_MEM_INVALID_PBLK     
+NamedType OSErr 96=OS_ERR_MEM_INVALID_PMEM     
+NamedType OSErr 97=OS_ERR_MEM_INVALID_PDATA    
+NamedType OSErr 98=OS_ERR_MEM_INVALID_ADDR     
+NamedType OSErr 99=OS_ERR_MEM_NAME_TOO_LONG    
+NamedType OSErr 100=OS_ERR_NOT_MUTEX_OWNER
+      
+NamedType OSErr 110=OS_ERR_FLAG_INVALID_PGRP    
+NamedType OSErr 111=OS_ERR_FLAG_WAIT_TYPE       
+NamedType OSErr 112=OS_ERR_FLAG_NOT_RDY         
+NamedType OSErr 113=OS_ERR_FLAG_INVALID_OPT     
+NamedType OSErr 114=OS_ERR_FLAG_GRP_DEPLETED    
+NamedType OSErr 115=OS_ERR_FLAG_NAME_TOO_LONG
+   
+NamedType OSErr 120=OS_ERR_PCP_LOWER
+            
+NamedType OSErr 130=OS_ERR_TMR_INVALID_DLY      
+NamedType OSErr 131=OS_ERR_TMR_INVALID_PERIOD   
+NamedType OSErr 132=OS_ERR_TMR_INVALID_OPT      
+NamedType OSErr 133=OS_ERR_TMR_INVALID_NAME     
+NamedType OSErr 134=OS_ERR_TMR_NON_AVAIL        
+NamedType OSErr 135=OS_ERR_TMR_INACTIVE         
+NamedType OSErr 136=OS_ERR_TMR_INVALID_DEST     
+NamedType OSErr 137=OS_ERR_TMR_INVALID_TYPE     
+NamedType OSErr 138=OS_ERR_TMR_INVALID          
+NamedType OSErr 139=OS_ERR_TMR_ISR              
+NamedType OSErr 140=OS_ERR_TMR_NAME_TOO_LONG    
+NamedType OSErr 141=OS_ERR_TMR_INVALID_STATE    
+NamedType OSErr 142=OS_ERR_TMR_STOPPED          
+NamedType OSErr 143=OS_ERR_TMR_NO_CALLBACK
+      
+NamedType OSErr 150=OS_ERR_NO_MORE_ID_AVAIL
+     
+NamedType OSErr 160=OS_ERR_TLS_NO_MORE_AVAIL    
+NamedType OSErr 161=OS_ERR_TLS_ID_INVALID       
+NamedType OSErr 162=OS_ERR_TLS_NOT_EN           
+NamedType OSErr 163=OS_ERR_TLS_DESTRUCT_ASSIGNED
+NamedType OSErr 164=OS_ERR_OS_NOT_RUNNING       
+
+#
+# Task States
+#
+TaskState 0xFF 0=Ready to run, 1=Pending, 2=Pending, 4=Pending, 8=Suspended, 16=Pending, 32=Pending, 128=Pending on multiple events
+#
+# API Functions
+#
+33     OSTime++                         OSTime=%u
+34     OSISRRegister                    isr_id=%u
+35     OSMboxCreate                     pevent=%I
+36     OSMboxDel                        pevent=%I         | Returns %OSErr
+37     OSMboxPost                       pevent=%I         | Returns %OSErr
+38     OSMboxPostOpt                    pevent=%I         | Returns %OSErr
+39     OSMboxPend                       pevent=%I         | Returns %OSErr
+40     OSMutexCreate                    pevent=%I
+41     OSMutexDel                       pevent=%I         | Returns %OSErr
+42     OSMutexPost                      pevent=%I         | Returns %OSErr
+43     OSMutexPend                      pevent=%I         | Returns %OSErr
+44     OS_TaskPrioInherit               p_tcb=%t prio=%u
+45     OS_TaskPrioDisinherit            p_tcb=%t prio=%u
+46     OSSemCreate                      pevent=%I
+47     OSSemDel                         pevent=%I         | Returns %OSErr
+48     OSSemPost                        pevent=%I         | Returns %OSErr
+49     OSSemPend                        pevent=%I         | Returns %OSErr
+50     OSQCreate                        pevent=%I
+51     OSQDel                           pevent=%I         | Returns %OSErr
+52     OSQPost                          pevent=%I         | Returns %OSErr
+53     OSQPostFront                     pevent=%I         | Returns %OSErr
+54     OSQPostOpt                       pevent=%I         | Returns %OSErr
+55     OSQPend                          pevent=%I         | Returns %OSErr
+56     OSFlagCreate                     pevent=%I
+57     OSFlagDel                        pevent=%I         | Returns %OSErr
+58     OSFlagPost                       pevent=%I         | Returns %OSErr
+59     OSFlagPend                       pevent=%I         | Returns %OSErr
+60     OSMemCreate                      pmem=%I
+61     OSMemPut                         pmem=%I           | Returns %OSErr
+62     OSMemGet                         pmem=%I           | Returns %OSErr
+63     OSTmrCreate                      ptmr=%I
+64     OSTmrDel                         ptmr=%I           | Returns %OSErr
+65     OSTmrStart                       ptmr=%I           | Returns %OSErr
+66     OSTmrStop                        ptmr=%I           | Returns %OSErr
+67     OSTmrExpired                     ptmr=%I

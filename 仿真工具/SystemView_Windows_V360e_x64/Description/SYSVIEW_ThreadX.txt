@@ -1,0 +1,179 @@
+# /*********************************************************************
+# *                   (c) SEGGER Microcontroller GmbH                  *
+# *                        The Embedded Experts                        *
+# *                           www.segger.com                           *
+# **********************************************************************
+#
+# -------------------------- END-OF-HEADER -----------------------------
+#
+# File    : SYSVIEW_ThreadX.txt
+# Purpose : ThreadX description file for SEGGER SystemView.
+#           Please copy this file to your SystemView installation folder,
+#           e.g. c:\Program Files\SEGGER\SystemView_V360\Description\.
+# */
+
+#
+# Types for parameter formatters
+#
+NamedType ReturnVal       0=TX_SUCCESS 0x01=TX_DELETED 0x02=TX_POOL_ERROR 0x03=TX_PTR_ERROR 0x04=TX_WAIT_ERROR 0x05=TX_SIZE_ERROR 0x06=TX_GROUP_ERROR 0x07=TX_NO_EVENTS 0x08=TX_OPTION_ERROR 0x09=TX_QUEUE_ERROR 0x0A=TX_QUEUE_EMPTY 0x0B=TX_QUEUE_FULL 0x0C=TX_SEMAPHORE_ERROR 0x0D=TX_NO_INSTANCE 0x0E=TX_THREAD_ERROR 0x0F=TX_PRIORITY_ERROR 0x10=TX_NO_MEMORY 0x11=TX_DELETE_ERROR 0x12=TX_RESUME_ERROR 0x13=TX_CALLER_ERROR 0x14=TX_SUSPEND_ERROR 0x15=TX_TIMER_ERROR 0x16=TX_TICK_ERROR 0x17=TX_ACTIVATE_ERROR 0x18=TX_THRESH_ERROR 0x19=TX_SUSPEND_LIFTED 0x1A=TX_WAIT_ABORTED 0x1B=TX_WAIT_ABORT_ERROR 0x1C=TX_MUTEX_ERROR 0x1D=TX_NOT_AVAILABLE 0x1E=TX_NOT_OWNED 0x1F=TX_INHERIT_ERROR 0x20=TX_NOT_DONE 0x21=TX_CEILING_EXCEEDED 0x22=TX_INVALID_CEILING 0xFF=TX_FEATURE_NOT_ENABLED
+NamedType ReturnValThread 0=TX_SUCCESS 0x01=TX_DELETED 0x02=TX_POOL_ERROR 0x03=TX_PTR_ERROR 0x04=TX_WAIT_ERROR 0x05=TX_SIZE_ERROR 0x06=TX_GROUP_ERROR 0x07=TX_NO_EVENTS 0x08=TX_OPTION_ERROR 0x09=TX_QUEUE_ERROR 0x0A=TX_QUEUE_EMPTY 0x0B=TX_QUEUE_FULL 0x0C=TX_SEMAPHORE_ERROR 0x0D=TX_NO_INSTANCE 0x0E=TX_THREAD_ERROR 0x0F=TX_PRIORITY_ERROR 0x10=TX_START_ERROR 0x11=TX_DELETE_ERROR 0x12=TX_RESUME_ERROR 0x13=TX_CALLER_ERROR 0x14=TX_SUSPEND_ERROR 0x15=TX_TIMER_ERROR 0x16=TX_TICK_ERROR 0x17=TX_ACTIVATE_ERROR 0x18=TX_THRESH_ERROR 0x19=TX_SUSPEND_LIFTED 0x1A=TX_WAIT_ABORTED 0x1B=TX_WAIT_ABORT_ERROR 0x1C=TX_MUTEX_ERROR 0x1D=TX_NOT_AVAILABLE 0x1E=TX_NOT_OWNED 0x1F=TX_INHERIT_ERROR 0x20=TX_NOT_DONE 0x21=TX_CEILING_EXCEEDED 0x22=TX_INVALID_CEILING 0xFF=TX_FEATURE_NOT_ENABLED
+NamedType WaitOption      0=TX_NO_WAIT 0xFFFFFFFF=TX_WAIT_FOREVER
+
+#
+# Task States
+#
+TaskState 0xFF 0=Ready, 1=Completed, 2=Terminated, 3=Suspended, 4=Sleep, 5=Queue susp, 6=Semaphore susp, 7=Event flag, 8=Block memory, 9=Mutex susp, 10=IO driver
+
+#
+# Preempting Task States
+#
+PreemptingTaskStates 0
+
+#
+# API Functions
+#
+
+32    _tx_initialize_kernel_enter
+33    _tx_block_allocate                           BlockPool = %p, WaitOption = %WaitOption                                                    | Returns %ReturnVal
+34    _tx_block_pool_create                        Name = %I, BlockPool = %p, BlockSize = %u, PoolSize = %u                                    | Returns %ReturnVal
+35    _tx_block_pool_delete                        BlockPool = %p                                                                              | Returns %ReturnVal
+36    _tx_block_pool_info_get                      BlockPool = %p                                                                              | Returns %ReturnVal
+37    _tx_block_pool_performance_info_get          BlockPool = %p                                                                              | Returns %ReturnVal
+38    _tx_block_pool_performance_system_info_get                                                                                               | Returns %ReturnVal
+39    _tx_block_pool_prioritize                    BlockPool = %p                                                                              | Returns %ReturnVal
+40    _tx_block_release                            BlockPtr = %p                                                                               | Returns %ReturnVal
+41    _tx_byte_allocate                            BytePool = %p, MemorySize = %u, WaitOption = %WaitOption                                    | Returns %ReturnVal
+42    _tx_byte_pool_create                         Name = %I, BytePoolPtr = %p, PoolSize = %u                                                  | Returns %ReturnVal
+43    _tx_byte_pool_delete                         BytePool = %I                                                                               | Returns %ReturnVal
+44    _tx_byte_pool_info_get                       BytePool = %I                                                                               | Returns %ReturnVal
+45    _tx_byte_pool_performance_info_get           BytePool = %I                                                                               | Returns %ReturnVal
+46    _tx_byte_pool_performance_system_info_get                                                                                                | Returns %ReturnVal
+47    _tx_byte_pool_prioritize                     BytePool = %I                                                                               | Returns %ReturnVal
+48    _tx_byte_release                             MemoryPtr = %p                                                                              | Returns %ReturnVal
+49    _tx_event_flags_create                       Name = %I, GroupPtr = %p                                                                    | Returns %ReturnVal
+50    _tx_event_flags_delete                       Group = %I                                                                                  | Returns %ReturnVal
+51    _tx_event_flags_get                          Group = %I                                                                                  | Returns %ReturnVal
+52    _tx_event_flags_info_get                     Group = %I                                                                                  | Returns %ReturnVal
+53    _tx_event_flags_performance_info_get         Group = %I                                                                                  | Returns %ReturnVal
+54    _tx_event_flags_performance_system_info_get                                                                                              | Returns %ReturnVal
+55    _tx_event_flags_set                          Group = %I, FlagsToSet: %u, SetOption = %u                                                  | Returns %ReturnVal
+56    _tx_event_flags_set_notify                   Group = %I                                                                                  | Returns %ReturnVal
+57    _tx_interrupt_control                        NewPosture = %u
+58    _tx_mutex_create                             Name = %I, MutexPtr = %p, Inherit = %u                                                      | Returns %ReturnVal
+59    _tx_mutex_delete                             Mutex = %I                                                                                  | Returns %ReturnVal
+60    _tx_mutex_get                                Mutex = %I, WaitOption = %WaitOption                                                        | Returns %ReturnVal
+61    _tx_mutex_info_get                           Mutex = %I                                                                                  | Returns %ReturnVal
+62    _tx_mutex_performance_info_get               Mutex = %I                                                                                  | Returns %ReturnVal
+63    _tx_mutex_performance_system_info_get                                                                                                    | Returns %ReturnVal
+64    _tx_mutex_prioritize                         Mutex = %I                                                                                  | Returns %ReturnVal
+65    _tx_mutex_put                                Mutex = %I                                                                                  | Returns %ReturnVal
+66    _tx_queue_create                             Name = %I, QueuePtr = %p, MessageSize = %u, QueueSize = %u                                  | Returns %ReturnVal
+67    _tx_queue_delete                             Queue = %I                                                                                  | Returns %ReturnVal
+68    _tx_queue_flush                              Queue = %I                                                                                  | Returns %ReturnVal
+69    _tx_queue_front_send                         Queue = %I, SourcePtr = %s, WaitOption = %WaitOption                                        | Returns %ReturnVal
+70    _tx_queue_info_get                           Queue = %I                                                                                  | Returns %ReturnVal
+71    _tx_queue_performance_info_get               Queue = %I                                                                                  | Returns %ReturnVal
+72    _tx_queue_performance_system_info_get                                                                                                    | Returns %ReturnVal
+73    _tx_queue_prioritize                         Queue = %I                                                                                  | Returns %ReturnVal
+74    _tx_queue_receive                            Queue = %I, DestinationPtr = %p, WaitOption = %WaitOption                                   | Returns %ReturnVal
+75    _tx_queue_send                               Queue = %I, SourcePtr = %p, WaitOption = %WaitOption                                        | Returns %ReturnVal
+76    _tx_queue_send_notify                        Queue = %I                                                                                  | Returns %ReturnVal
+77    _tx_semaphore_ceiling_put                    Semaphore = %I, Ceiling = %u                                                                | Returns %ReturnVal
+78    _tx_semaphore_create                         Name = %I, SemaphorePtr = %p, InitialCount = %u                                             | Returns %ReturnVal
+79    _tx_semaphore_delete                         Semaphore = %I                                                                              | Returns %ReturnVal
+80    _tx_semaphore_get                            Semaphore = %I, WaitOption = %WaitOption                                                    | Returns %ReturnVal
+81    _tx_semaphore_info_get                       Semaphore = %I                                                                              | Returns %ReturnVal
+82    _tx_semaphore_performance_info_get           Semaphore = %I                                                                              | Returns %ReturnVal
+83    _tx_semaphore_performance_system_info_get                                                                                                | Returns %ReturnVal
+84    _tx_semaphore_prioritize                     Semaphore = %I                                                                              | Returns %ReturnVal
+85    _tx_semaphore_put                            Semaphore = %I                                                                              | Returns %ReturnVal
+86    _tx_semaphore_put_notify                     Semaphore = %I                                                                              | Returns %ReturnVal
+87    _tx_thread_create                            Name = %I, ThreadPtr = %p, Stack size = %u Bytes, Priority = %u                             | Returns %ReturnValThread
+88    _tx_thread_delete                            Thread = %t                                                                                 | Returns %ReturnVal
+89    _tx_thread_entry_exit_notify                                                                                                             | Returns %ReturnVal
+90    _tx_thread_identify                                                                                                                      | Returns %t
+91    _tx_thread_info_get                                                                                                                      | Returns %ReturnVal
+92    _tx_thread_performance_info_get                                                                                                          | Returns %ReturnVal
+93    _tx_thread_performance_system_info_get                                                                                                   | Returns %ReturnVal
+94    _tx_thread_preemption_change                 Thread = %t, NewThreshold = %u                                                              | Returns %ReturnVal
+95    _tx_thread_priority_change                   Thread = %t, NewPriority = %u                                                               | Returns %ReturnVal
+96    _tx_thread_relinquish
+97    _tx_thread_reset                             Thread = %t                                                                                 | Returns %ReturnVal
+98    _tx_thread_resume                            Thread = %t                                                                                 | Returns %ReturnVal
+99    _tx_thread_sleep                             %u ticks                                                                                    | Returns %ReturnVal
+100   _tx_thread_stack_error_notify                                                                                                            | Returns %ReturnVal
+101   _tx_thread_suspend                           Thread = %t                                                                                 | Returns %ReturnVal
+102   _tx_thread_terminate                         Thread = %t                                                                                 | Returns %ReturnVal
+103   _tx_thread_time_slice_change                 Thread = %t, NewTimeSlice = %u                                                              | Returns %ReturnVal
+104   _tx_thread_wait_abort                        Thread = %t                                                                                 | Returns %ReturnVal
+105   _tx_time_get                                                                                                                             | Returns %u
+106   _tx_time_set                                 NewTime = %u
+107   _tx_timer_activate                           Timer = %p                                                                                  | Returns %ReturnVal
+108   _tx_timer_change                             Timer = %p, InitialTicks = %u, RescheduleTicks = %u                                         | Returns %ReturnVal
+109   _tx_timer_create                             Name = %I, TimerPtr = %p, InitialTicks = %u, RescheduleTicks = %u, AutoActivate = %u        | Returns %ReturnVal
+110   _tx_timer_deactivate                         Timer = %p                                                                                  | Returns %ReturnVal
+111   _tx_timer_delete                             Timer = %p                                                                                  | Returns %ReturnVal
+112   _tx_timer_info_get                           Timer = %p                                                                                  | Returns %ReturnVal
+113   _tx_timer_performance_info_get               Timer = %p                                                                                  | Returns %ReturnVal
+114   _tx_timer_performance_system_info_get                                                                                                    | Returns %ReturnVal
+115   _txe_block_allocate                          BlockPool = %p, WaitOption = %WaitOption                                                    | Returns %ReturnVal
+116   _txe_block_pool_create                       Name = %I, BlockPool = %p, BlockSize = %u, PoolSize = %u                                    | Returns %ReturnVal
+117   _txe_block_pool_delete                       BlockPool = %p                                                                              | Returns %ReturnVal
+118   _txe_block_pool_info_get                     BlockPool = %p                                                                              | Returns %ReturnVal
+119   _txe_block_pool_performance_info_get         BlockPool = %p                                                                              | Returns %ReturnVal
+120   _txe_block_release                           BlockPtr = %p                                                                               | Returns %ReturnVal
+121   _txe_byte_allocate                           BytePool = %p, MemorySize = %u, WaitOption = %WaitOption                                    | Returns %ReturnVal
+122   _txe_byte_pool_create                        Name = %I, BytePoolPtr = %p, PoolSize = %u                                                  | Returns %ReturnVal
+123   _txe_byte_pool_delete                        BytePool = %p                                                                               | Returns %ReturnVal
+124   _txe_byte_pool_info_get                      BytePool = %p                                                                               | Returns %ReturnVal
+125   _txe_byte_pool_prioritize                    BytePool = %p                                                                               | Returns %ReturnVal
+126   _txe_byte_release                            MemoryPtr = %p                                                                              | Returns %ReturnVal
+127   _txe_event_flags_create                      Name = %I, GroupPtr = %p                                                                    | Returns %ReturnVal
+128   _txe_event_flags_delete                      Group = %I                                                                                  | Returns %ReturnVal
+129   _txe_event_flags_get                         Group = %I                                                                                  | Returns %ReturnVal
+130   _txe_event_flags_info_get                    Group = %I                                                                                  | Returns %ReturnVal
+131   _txe_event_flags_set                         Group = %I, FlagsToSet: %u, SetOption = %u                                                  | Returns %ReturnVal
+132   _txe_event_flags_set_notify                  Group = %I                                                                                  | Returns %ReturnVal
+133   _txe_mutex_create                            Name = %I, MutexPtr = %p, Inherit = %u                                                      | Returns %ReturnVal
+134   _txe_mutex_delete                            Mutex = %I                                                                                  | Returns %ReturnVal
+135   _txe_mutex_get                               Mutex = %I, WaitOption = %WaitOption                                                        | Returns %ReturnVal
+136   _txe_mutex_info_get                          Mutex = %I                                                                                  | Returns %ReturnVal
+137   _txe_mutex_prioritize                        Mutex = %I                                                                                  | Returns %ReturnVal
+138   _txe_mutex_put                               Mutex = %I                                                                                  | Returns %ReturnVal
+139   _txe_queue_create                            Name = %I, QueuePtr = %p, MessageSize = %u, QueueSize = %u                                  | Returns %ReturnVal
+140   _txe_queue_delete                            Queue = %I                                                                                  | Returns %ReturnVal
+141   _txe_queue_flush                             Queue = %I                                                                                  | Returns %ReturnVal
+142   _txe_queue_front_send                        Queue = %I, SourcePtr = %s, WaitOption = %WaitOption                                        | Returns %ReturnVal
+143   _txe_queue_info_get                          Queue = %I                                                                                  | Returns %ReturnVal
+144   _txe_queue_prioritize                        Queue = %I                                                                                  | Returns %ReturnVal
+145   _txe_queue_receive                           Queue = %I, DestinationPtr = %p, WaitOption = %WaitOption                                   | Returns %ReturnVal
+146   _txe_queue_send                              Queue = %I, SourcePtr = %p, WaitOption = %WaitOption                                        | Returns %ReturnVal
+147   _txe_queue_send_notify                       Queue = %I                                                                                  | Returns %ReturnVal
+148   _txe_semaphore_ceiling_put                   Semaphore = %I, Ceiling = %u                                                                | Returns %ReturnVal
+149   _txe_semaphore_create                        Name = %I, SemaphorePtr = %p, InitialCount = %u                                             | Returns %ReturnVal
+150   _txe_semaphore_delete                        Semaphore = %I                                                                              | Returns %ReturnVal
+151   _txe_semaphore_get                           Semaphore = %I, WaitOption = %WaitOption                                                    | Returns %ReturnVal
+152   _txe_semaphore_info_get                      Semaphore = %I                                                                              | Returns %ReturnVal
+153   _txe_semaphore_prioritize                    Semaphore = %I                                                                              | Returns %ReturnVal
+154   _txe_semaphore_put                           Semaphore = %I                                                                              | Returns %ReturnVal
+155   _txe_semaphore_put_notify                    Semaphore = %I                                                                              | Returns %ReturnVal
+156   _txe_thread_create                           Name = %I, ThreadPtr = %p, Stack size = %u Bytes, Priority = %u                             | Returns %ReturnValThread
+157   _txe_thread_delete                           Thread = %t                                                                                 | Returns %ReturnVal
+158   _txe_thread_entry_exit_notify                                                                                                            | Returns %ReturnVal
+159   _txe_thread_info_get                                                                                                                     | Returns %ReturnVal
+160   _txe_thread_preemption_change                Thread = %t, NewThreshold = %u                                                              | Returns %ReturnVal
+161   _txe_thread_priority_change                  Thread = %t, NewPriority = %u                                                               | Returns %ReturnVal
+162   _txe_thread_relinquish
+163   _txe_thread_reset                            Thread = %t                                                                                 | Returns %ReturnVal
+164   _txe_thread_resume                           Thread = %t                                                                                 | Returns %ReturnVal
+165   _txe_thread_suspend                          Thread = %t                                                                                 | Returns %ReturnVal
+166   _txe_thread_terminate                        Thread = %t                                                                                 | Returns %ReturnVal
+167   _txe_thread_time_slice_change                Thread = %t, NewTimeSlice = %u                                                              | Returns %ReturnVal
+168   _txe_thread_wait_abort                       Thread = %t                                                                                 | Returns %ReturnVal
+169   _txe_timer_activate                          Timer = %p                                                                                  | Returns %ReturnVal
+170   _txe_timer_change                            Timer = %p, InitialTicks = %u, RescheduleTicks = %u                                         | Returns %ReturnVal
+171   _txe_timer_create                            Timer = %p, Name = %s, InitialTicks = %u, RescheduleTicks = %u, AutoActivate = %u           | Returns %ReturnVal
+172   _txe_timer_deactivate                        Timer = %p                                                                                  | Returns %ReturnVal
+173   _txe_timer_delete                            Timer = %p                                                                                  | Returns %ReturnVal
+174   _txe_timer_info_get                          Timer = %p                                                                                  | Returns %ReturnVal
+

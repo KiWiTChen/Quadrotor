@@ -1,0 +1,60 @@
+# /*********************************************************************
+# *            (c) 1995 - 2018 SEGGER Microcontroller GmbH             *
+# *                        The Embedded Experts                        *
+# *                           www.segger.com                           *
+# **********************************************************************
+
+#
+# Events for IP API functions (IDs 0-249).
+#
+0     IP_Init
+1     IP_DeInit
+3     IP_NI_SetAdminState_NoLock          IFaceId=%u AdminState=%d
+
+#
+# Events for BSD socket API functions (IDs 250-299).
+#
+250   connect                             hSock=%d pSockAddr=%p AddrLen=%d                                             | Returns %d
+251   accept                              hSock=%d pSockAddr=%p pAddrLen=%p                                            | Returns %d
+252   send                                hSock=%d pBuffer=%p NumBytes=%d Flags=%u                                     | Returns %d
+253   sendto                              hSock=%d pBuffer=%p NumBytes=%d Flags=%u pDestAddr=%p NumBytesAddr=%d        | Returns %d
+254   recv                                hSock=%d pData=%p NumBytes=%d Flags=%u                                       | Returns %d
+255   recvfrom                            hSock=%d pData=%p NumBytes=%d Flags=%u pFrom=%p pAddrLen=%p                  | Returns %d
+
+#
+# Events for TCP zero-copy API functions (IDs 300-349).
+#
+
+#
+# Events for UDP zero-copy API functions (IDs 350-399).
+#
+
+#
+# Events for RAW zero-copy API functions (IDs 400-449).
+#
+
+#
+# Events for internal FIFO monitoring (requires IP_SUPPORT_PROFILE_FIFO=1; IDs 500-519).
+#
+500   IP_FIFO_Add                         pFifo=%I pNewItem=%p
+501   IP_FIFO_Add_NoLock                  pFifo=%I pNewItem=%p
+502   IP_FIFO_GetLeave                    pFifo=%I                                                                     | Returns pItem=%p
+503   IP_FIFO_GetRemove                   pFifo=%I                                                                     | Returns pItem=%p
+504   IP_FIFO_GetRemove_NoLock            pFifo=%I                                                                     | Returns pItem=%p
+505   IP_FIFO_TryGetRemove                pFifo=%I                                                                     | Returns pItem=%p
+506   IP_FIFO_TryGetRemove_NoLock         pFifo=%I                                                                     | Returns pItem=%p
+
+#
+# FIFO load monitoring (requires IP_SUPPORT_PROFILE_FIFO=1 && ((IP_DEBUG_FIFO != 0) || (IP_SUPPORT_STATS_FIFO != 0))).
+#
+519   IP_FIFO_Update                      pFifo=%I Cnt=%u Max=%u
+
+#
+# Events for internal packet monitoring (IDs 520-539).
+#
+520   IP__SendPacket                      pPacket=%p                                                                   | Returns %d
+521   -->PacketToSend                     IFaceId=%u NumBytes=%u                                                       | @Info
+522   _ReadPacketsSingleIF                IFaceId=%u pLastNumBytes=%p InInt=%u
+523   -->EthPacketReceived                IFace=%u, %u bytes @%p, MAC:...%x->%x, Data: %B                              | @Info
+524   PacketAlloc                         NumBytesIncPadding=%u NumPacketReserved=%u                                   | Returns pPacket=%p
+525   PacketFree                          pPacket=%p

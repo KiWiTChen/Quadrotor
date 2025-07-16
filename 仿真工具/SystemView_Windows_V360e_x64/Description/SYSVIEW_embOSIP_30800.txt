@@ -1,0 +1,51 @@
+# /*********************************************************************
+# *            (c) 1995 - 2018 SEGGER Microcontroller GmbH             *
+# *                        The Embedded Experts                        *
+# *                           www.segger.com                           *
+# **********************************************************************
+
+#
+# Events for IP API functions (IDs 0-249).
+#
+0     IP_Init
+1     IP_DeInit
+
+#
+# Events for BSD socket API functions (IDs 250-299).
+#
+250   connect                             hSock=%d pSockAddr=%p AddrLen=%d
+251   accept                              hSock=%d pSockAddr=%p pAddrLen=%p
+252   send                                hSock=%d pBuffer=%p NumBytes=%d Flags=%u
+253   sendto                              hSock=%d pBuffer=%p NumBytes=%d Flags=%u pDestAddr=%p NumBytesAddr=%d
+254   recv                                hSock=%d pData=%p NumBytes=%d Flags=%u
+255   recvfrom                            hSock=%d pData=%p NumBytes=%d Flags=%u
+
+#
+# Events for TCP zero-copy API functions (IDs 300-349).
+#
+
+#
+# Events for UDP zero-copy API functions (IDs 350-399).
+#
+
+#
+# Events for RAW zero-copy API functions (IDs 400-449).
+#
+
+#
+# Events for internal FIFO monitoring (requires IP_SUPPORT_PROFILE_FIFO=1; IDs 500-519).
+#
+500   IP_FIFO_Add                         pFifo=%p pNewItem=%p
+501   IP_FIFO_Add_NoLock                  pFifo=%p pNewItem=%p
+502   IP_FIFO_GetRemove                   pFifo=%p
+503   IP_FIFO_GetRemove_NoLock            pFifo=%p
+504   IP_FIFO_TryGetRemove                pFifo=%p
+505   IP_FIFO_TryGetRemove_NoLock         pFifo=%p
+
+#
+# Events for internal packet monitoring (IDs 520-539).
+#
+520   IP__SendPacket                      pPacket=%p
+521   -->PacketToSend                     IFaceId=%u NumBytes=%u                                                       | @Info
+522   _ReadPacketsSingleIF                IFaceId=%u pLastNumBytes=%p InInt=%u
+523   -->PacketReceived                   IFaceId=%u NumBytes=%u                                                       | @Info

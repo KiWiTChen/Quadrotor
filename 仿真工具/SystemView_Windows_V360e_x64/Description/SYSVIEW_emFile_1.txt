@@ -1,0 +1,139 @@
+0       FS_Init
+1       FS_DeInit
+2       FS_Mount                            pVolumeName=%s
+3       FS_MountEx                          pVolumeName=%s MountType=%d
+4       FS_SetAutoMount                     pVolumeName=%s MountType=%d
+5       FS_Sync                             pVolumeName=%s
+6       FS_Unmount                          pVolumeName=%s
+7       FS_UnmountForced                    pVolumeName=%s
+8       FS_AddDevice                        pDevType=%p
+9       FS_AddPhysDevice                    pDevType=%p
+10      FS_AssignMemory                     pMem=%p NumBytes=%u
+11      FS_ConfigFileBufferDefault          BufferSize=%u Flags=%p
+12      FS_ConfigOnWriteDirUpdate           OnOff=%u
+13      FS_LOGVOL_Create                    pVolumeName=%s
+14      FS_LOGVOL_AddDevice                 pVolumeName=%s pDevice=%p Unit=%u StartOff=%u NumSectors=%u
+15      FS_SetFileBufferFlags               pFile=%p Flags=%p
+16      FS_SetFileWriteMode                 WriteMode=%u
+17      FS_SetFileWriteModeEx               WriteMode=%u pVolumeName=%s
+18      FS_SetMemHandler                    pfAlloc=%p pfFree=%p
+19      FS_SetMaxSectorSize                 MaxSectorSize=%u
+20      FS_FClose                           pFile=%p
+21      FS_FOpen                            pFileName=%s pMode=%s
+22      FS_FOpenEx                          pFileName=%s pMode=%s pFile=%p
+23      FS_FRead                            pData=%p BytesPerItem=%u NumItems=%u pFile=%p
+24      FS_FWrite                           pData=%p BytesPerItem=%u NumItems=%u pFile=%p
+25      FS_Read                             pFile=%p pData=%p NumBytes=%u
+26      FS_SyncFile                         pFile=%p
+27      FS_Write                            pFile=%p pData=%p NumBytes=%u
+28      FS_FSeek                            pFile=%p Offset=%d Origin=%u
+29      FS_FTell                            pFile=%p
+30      FS_CopyFile                         pFileNameSrc=%s pFileNameDest=%s
+31      FS_CopyFileEx                       pFileNameSrc=%s pFileNameDest=%s pBuffer=%p NumBytes=%u
+32      FS_GetFileAttributes                pName=%s
+33      FS_GetFileTime                      pName=%s TimeStamp=%p
+34      FS_GetFileTimeEx                    pName=%s TimeStamp=%p Type=%u
+35      FS_ModifyFileAttributes             pName=%s MaskSet=%p MaskClr=%p
+36      FS_Move                             pExistingName=%s pNewName=%s
+37      FS_Remove                           pName=%s
+38      FS_Rename                           pExistingName=%s pNewName=%s
+39      FS_SetEndOfFile                     pFile=%p
+40      FS_SetFileAttributes                pName=%s Attr=%u
+41      FS_SetFileTime                      pName=%s TimeStamp=%p
+42      FS_SetFileTimeEx                    pName=%s TimeStamp=%p Type=%u
+43      FS_SetFileSize                      pFile=%p NumBytes=%u
+44      FS_Truncate                         pFile=%p NumBytes=%u
+45      FS_Verify                           pFile=%p pData=%p NumBytes=%u
+46      FS_WipeFile                         pFileName=%s
+47      FS_CreateDir                        pDirPath=%s
+48      FS_FindClose                        pfd=%p
+49      FS_FindFirstFile                    pfd=%p pPath=%s pFileName=%s SizeofFileName=%u
+50      FS_FindNextFile                     pfd=%p
+51      FS_MkDir                            pDirName=%s
+52      FS_RmDir                            pDirName=%s
+53      FS_Format                           pVolumeName=%s pFormatInfo=%p
+54      FS_FormatLLIfRequired               pVolumeName=%s
+55      FS_FormatLow                        pVolumeName=%s
+56      FS_IsHLFormatted                    pVolumeName=%s
+57      FS_IsLLFormatted                    pVolumeName=%s
+58      FS_CheckDisk                        pVolumeName=%s pBuffer=%p BufferSize=%u MaxRecursionLevel=%u
+59      FS_CheckDisk_ErrCode2Text           ErrCode=%u
+60      FS_CreateMBR                        pVolumeName=%s pPartInfo=%p NumPartitions=%u
+61      FS_FileTimeToTimeStamp              pFileTime=%p pTimeStamp=%p
+62      FS_FreeSectors                      pVolumeName=%s
+63      FS_GetFileSize                      pFile=%p
+64      FS_GetMaxSectorSize
+65      FS_GetNumFilesOpen
+66      FS_GetNumVolumes
+67      FS_GetPartitionInfo                 pVolumeName=%s pPartInfo=%p PartIndex=%u
+68      FS_GetVolumeFreeSpace               pVolumeName=%s
+69      FS_GetVolumeFreeSpaceKB             pVolumeName=%s
+70      FS_GetVolumeInfo                    pVolumeName=%s pInfo=%p
+71      FS_GetVolumeInfoEx                  pVolumeName=%s pInfo=%p Flags=%p
+72      FS_GetVolumeLabel                   pVolumeName=%s pVolumeLabel=%p VolumeLabelSize=%u
+73      FS_GetVolumeName                    Index=%u pBuffer=%p BufferSize=%u
+74      FS_GetVolumeSize                    pVolumeName=%s
+75      FS_GetVolumeSizeKB                  pVolumeName=%s
+76      FS_GetVolumeStatus                  pVolumeName=%s
+77      FS_IsVolumeMounted                  pVolumeName=%s
+78      FS_Lock
+79      FS_LockVolume                       pVolumeName=%s
+80      FS_SetBusyLEDCallback               pVolumeName=%s pfCallback=%p
+81      FS_SetMemAccessCallback             pVolumeName=%s pfCallback=%p
+82      FS_SetVolumeLabel                   pVolumeName=%s pVolumeLabel=%s
+83      FS_TimeStampToFileTime              TimeStamp=%u pFileTime=%p
+84      FS_Unlock
+85      FS_UnlockVolume                     pVolumeName=%s
+86      FS_ClearErr                         pFile=%p
+87      FS_ErrorNo2Text                     ErrCode=%u
+88      FS_FEof                             pFile=%p
+89      FS_FError                           pFile=%p
+90      FS_FAT_GrowRootDir                  pVolumeName=%s NumAddEntries=%u
+91      FS_FormatSD                         pVolumeName=%s
+92      FS_FAT_SupportLFN
+93      FS_FAT_DisableLFN
+94      FS_FAT_ConfigFATCopyMaintenance     OnOff=%u
+95      FS_FAT_ConfigFSInfoSectorUse        OnOff=%u
+96      FS_FAT_ConfigROFileMovePermission   OnOff=%u
+97      FS_STORAGE_Clean                    pVolumeName=%s
+98      FS_STORAGE_CleanOne                 pVolumeName=%s pMore=%p
+99      FS_STORAGE_FreeSectors              pVolumeName=%s FirstSector=%u NumSectors=%u
+100     FS_STORAGE_GetCleanCnt              pVolumeName=%s pCnt=%p
+101     FS_STORAGE_GetCounters              pStat=%p
+102     FS_STORAGE_GetDeviceInfo            pVolumeName=%s pDevInfo=%p
+103     FS_STORAGE_GetSectorUsage           pVolumeName=%s SectorIndex=%u
+104     FS_STORAGE_Init
+105     FS_STORAGE_ReadSector               pVolumeName=%s pData=%p SectorIndex=%u
+106     FS_STORAGE_ReadSectors              pVolumeName=%s pData=%p FirstSector=%u NumSectors=%u
+107     FS_STORAGE_RefreshSectors           pVolumeName=%s FirstSector=%u NumSectors=%u pBuffer=%p NumBytes=%u
+108     FS_STORAGE_ResetCounters
+109     FS_STORAGE_Sync                     pVolumeName=%s
+110     FS_STORAGE_SyncSectors              pVolumeName=%s FirstSector=%u NumSectors=%u
+111     FS_STORAGE_Unmount                  pVolumeName=%s
+112     FS_STORAGE_WriteSector              pVolumeName=%s pData=%p SectorIndex=%u
+113     FS_STORAGE_WriteSectors             pVolumeName=%s pData=%p FirstSector=%u NumSectors=%u
+114     FS_AssignCache                      pVolumeName=%s pCacheData=%p NumBytes=%u pfInit=%p
+115     FS_CACHE_Clean                      pVolumeName=%s
+116     FS_CACHE_Invalidate                 pVolumeName=%s
+117     FS_CACHE_SetAssocLevel              pVolumeName=%s AssocLevel=%u
+118     FS_CACHE_SetMode                    pVolumeName=%s TypeMask=%p ModeMask=%p
+119     FS_CACHE_SetQuota                   pVolumeName=%s TypeMask=%p NumSectors=%u
+120     FS_JOURNAL_Begin                    pVolumeName=%s
+121     FS_JOURNAL_Create                   pVolumeName=%s NumBytes=%u
+122     FS_JOURNAL_CreateEx                 pVolumeName=%s NumBytes=%u SupportFreeSector=%u
+123     FS_JOURNAL_Disable                  pVolumeName=%s
+124     FS_JOURNAL_Enable                   pVolumeName=%s
+125     FS_JOURNAL_End                      pVolumeName=%s
+126     FS_CRYPT_Prepare                    pCryptObj=%p pAlgoType=%p pContext=%p BytesPerBlock=%u pKey=%p
+127     FS_SetEncryptionObject              pFile=%p pCryptObj=%p
+128     FS_LB_GetStatus                     pType=%p Unit=%u
+129     FS_LB_GetDeviceInfo                 pType=%p Unit=%u pInfo=%p
+130     FS_LB_InitMedium                    pType=%p Unit=%u
+131     FS_LB_Ioctl                         pType=%p Unit=%u Cmd=%d Aux=%d pBuffer=%p
+132     FS_LB_FreeSectorsPart               pType=%p Unit=%u SectorIndex=%u NumSectors=%u
+133     FS_LB_ReadBurst                     pType=%p Unit=%u SectorIndex=%u NumSectors=%u pBuffer=%p Type=%u
+134     FS_LB_ReadDevice                    pType=%p Unit=%u SectorIndex=%u pBuffer=%p Type=%u
+135     FS_LB_WriteBurst                    pType=%p Unit=%u SectorIndex=%u NumSectors=%u pBuffer=%p Type=%u WriteToJournal=%u
+136     FS_LB_WriteDevice                   pType=%p Unit=%u SectorIndex=%u pBuffer=%p Type=%u WriteToJournal=%u
+137     FS_LB_WriteMultiple                 pType=%p Unit=%u SectorIndex=%u NumSectors=%u pBuffer=%p Type=%u WriteToJournal=%u
+138     FS_LB_WriteBack                     pType=%p Unit=%u SectorIndex=%u pBuffer=%p
